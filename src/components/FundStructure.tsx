@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, FileText, ShieldCheck, DollarSign, Clock, Percent, Calendar } from "lucide-react";
+import ReturnCalculator from "@/components/ReturnCalculator";
 
 const FundStructure = () => {
   const structure = [
@@ -125,6 +126,7 @@ const FundStructure = () => {
             </Card>
           ))}
         </div>
+        <ReturnCalculator />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
