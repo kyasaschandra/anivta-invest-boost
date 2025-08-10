@@ -7,12 +7,12 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-hero text-white">
-      <div className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold">Anivta Capital</h3>
+              <h3 className="text-2xl font-bold">Anvita Capital</h3>
               <p className="text-white/80 mt-2 leading-relaxed">
                 Strategic investment solutions for sustainable growth and exceptional returns.
               </p>
@@ -30,27 +30,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Quick Links</h4>
-            <ul className="space-y-2 text-white/80">
-              <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#performance" className="hover:text-white transition-colors">Performance</a></li>
-              <li><a href="#team" className="hover:text-white transition-colors">Our Team</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
-            </ul>
-          </div>
 
-          {/* Investment Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Investment</h4>
-            <ul className="space-y-2 text-white/80">
-              <li><a href="#" className="hover:text-white transition-colors">Investment Strategy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Portfolio</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Due Diligence</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Investor Relations</a></li>
-            </ul>
-          </div>
 
           {/* Contact */}
           <div className="space-y-4">
@@ -58,7 +38,7 @@ const Footer = () => {
             <div className="space-y-3 text-white/80">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4" />
-                <span>invest@anivtacapital.com</span>
+                <span>invest@anvitacapital.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4" />
@@ -73,10 +53,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/20 mt-14 md:mt-16 pt-8">
+        <div className="border-t border-white/20 mt-10 md:mt-12 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-white/60 text-sm">
-              © {currentYear} Anivta Capital Fund. All rights reserved.
+              © {currentYear} Anvita Capital Fund LLC. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-white/60">
               <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
