@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { projects } from "@/data/projects";
 import { ExternalLink } from "lucide-react";
+import Navigation from "@/components/Navigation";
 
 const setSEO = (title: string, description: string, canonical?: string) => {
   document.title = title;
@@ -35,7 +36,9 @@ const ProjectsPage = () => {
   }, []);
 
   return (
-    <main>
+    <div className="min-h-screen">
+      <Navigation />
+      <main>
       <section className="pt-28 pb-16 md:pb-24 bg-gradient-card">
         <div className="max-w-7xl mx-auto px-6">
           <header className="text-center mb-10 md:mb-14">
@@ -86,7 +89,8 @@ const ProjectsPage = () => {
           </section>
         </div>
       </section>
-    </main>
+      </main>
+    </div>
   );
 };
 
