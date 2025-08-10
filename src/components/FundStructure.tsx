@@ -18,7 +18,7 @@ const FundStructure = () => {
       subtitle: "Quarterly Income",
       roi: "Target ROI: 11% p.a.",
       payout: "Payouts: Every 3 months",
-      tenor: "Tenure: 36 months",
+      tenor: "Minimum Tenure: 36 months",
       description:
         "Ideal for investors seeking a steady, frequent cash flow while maintaining capital security.",
     },
@@ -27,7 +27,7 @@ const FundStructure = () => {
       subtitle: "Semi-Annual Income",
       roi: "Target ROI: 11.50% p.a.",
       payout: "Payouts: Every 6 months",
-      tenor: "Tenure: 36 months",
+      tenor: "Minimum Tenure: 36 months",
       description:
         "Balances higher yield with moderate payout frequency for those preferring fewer disbursements.",
     },
@@ -36,7 +36,7 @@ const FundStructure = () => {
       subtitle: "Annual Income",
       roi: "Target ROI: 12% p.a.",
       payout: "Payouts: Once per year",
-      tenor: "Tenure: 36 months",
+      tenor: "Minimum Tenure: 36 months",
       description:
         "Designed for investors comfortable with annual disbursements, maximizing yield over the investment term.",
     },
