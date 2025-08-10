@@ -78,24 +78,6 @@ const Team = () => {
           ))}
         </div>
 
-        {/* Advisory Board */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-primary mb-8">Advisory Board</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="space-y-2">
-              <h4 className="text-lg font-semibold text-primary">Dr. James Harrison</h4>
-              <p className="text-sm text-muted-foreground">Former Federal Reserve Board Member</p>
-            </div>
-            <div className="space-y-2">
-              <h4 className="text-lg font-semibold text-primary">Lisa Thompson</h4>
-              <p className="text-sm text-muted-foreground">Ex-CEO, Fortune 500 Tech Company</p>
-            </div>
-            <div className="space-y-2">
-              <h4 className="text-lg font-semibold text-primary">Robert Kim</h4>
-              <p className="text-sm text-muted-foreground">Venture Capital Pioneer, 30+ Years</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
