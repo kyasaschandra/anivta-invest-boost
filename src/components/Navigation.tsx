@@ -27,15 +27,16 @@ const Navigation = () => {
         : "bg-transparent"
     }`}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          <a href="/" className="flex items-center space-x-3" aria-label="Anvita Capital home">
+        <div className="flex items-center justify-between h-20 md:h-24">
+          <a href="/" className="flex items-center space-x-3 rounded-xl bg-background/80 backdrop-blur-sm ring-1 ring-border px-2 md:px-3 py-1" aria-label="Anvita Capital home">
             <img
               src="/lovable-uploads/89343412-3f23-4f7b-a630-9fac8175f2a0.png"
               alt="Anvita Capital logo — Building Happiness"
-              width="120"
-              height="40"
-              className="h-10 w-auto object-contain"
+              width="160"
+              height="60"
+              className="h-12 md:h-16 w-auto object-contain drop-shadow-lg"
               loading="eager"
+              decoding="sync"
             />
           </a>
 
