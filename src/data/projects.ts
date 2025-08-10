@@ -38,4 +38,12 @@ export const projects: Project[] = [
     content:
       "Anvita Parkside focuses on wellness and community living, integrating green spaces with premium villas and modern infrastructure.",
   },
+  {
+    slug: "avasa-texas-prosper",
+    title: "Avasa",
+    location: "Prosper, Texas, USA",
+    image: "/lovable-uploads/93168153-2256-49b6-8356-6a630e4b8a5d.png",
+    description: "A 6,000 sq. ft. home designed to align with Indian Vastu principles while embracing global standards.",
+    content: "Spanning 17 acres with 25 contemporary custom houses, this thoughtfully designed residence targets a 2028 completion and emphasizes harmony, light, and functional flow.",
+  },
 ];
