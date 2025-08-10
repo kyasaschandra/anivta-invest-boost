@@ -72,6 +72,19 @@ const ProjectDetailPage = () => {
                 loading="eager"
               />
             </AspectRatio>
+            {project.externalUrl && (
+              <p className="mt-4 text-sm">
+                <span className="text-muted-foreground">For more details:</span>{' '}
+                <a
+                  href={project.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-accent"
+                >
+                  Explore details
+                </a>
+              </p>
+            )}
           </section>
 
           <section className="prose prose-neutral max-w-none">

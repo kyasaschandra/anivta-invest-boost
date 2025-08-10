@@ -65,6 +65,19 @@ const ProjectsPage = () => {
                       <p className="text-muted-foreground text-sm mt-1" itemProp="description">
                         {project.description}
                       </p>
+                      {project.externalUrl && (
+                        <p className="text-sm mt-3">
+                          <span className="text-muted-foreground">For more details:</span>{' '}
+                          <a
+                            href={project.externalUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline text-accent"
+                          >
+                            Explore details
+                          </a>
+                        </p>
+                      )}
                     </CardContent>
                   </Card>
                 </Link>
