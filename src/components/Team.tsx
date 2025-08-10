@@ -6,18 +6,18 @@ import teamMember2 from "@/assets/team-member-2.jpg";
 const Team = () => {
   const teamMembers = [
     {
-      name: "Atchuta Rao Boppana",
-      role: "Managing Partner & CEO",
+      name: "Rao Boppana",
+      role: "Manager & Strategic Lead",
       image: teamMember1,
-      bio: "20+ years in investment banking and private equity. Former Goldman Sachs VP with expertise in growth-stage investments.",
+      bio: "With a proven track record in global real estate development and investment, Rao Boppana provides strategic direction for Anvita Capital Fund LLC, ensuring every project meets the highest standards of quality, security, and investor value.",
       linkedin: "#",
       twitter: "#"
     },
     {
       name: "Sarita Kakarla",
-      role: "Chief Investment Officer",
+      role: "Manager & Operations Lead",
       image: teamMember2,
-      bio: "Former BlackRock portfolio manager with deep expertise in ESG investing and risk management across global markets.",
+      bio: "Overseeing U.S. operations, banking, and administration, Sarita Kakarla ensures the fund's day-to-day activities run seamlessly, enabling timely execution, transparent reporting, and efficient investor communications.",
       linkedin: "#",
       twitter: "#"
     }
@@ -32,8 +32,7 @@ const Team = () => {
             Leadership Team
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our experienced leadership team brings decades of combined expertise in investment management, 
-            portfolio optimization, and strategic business development.
+            Guided by strategic vision and operational excellence, the leadership team of Anvita Capital Fund LLC combines global real estate expertise with disciplined fund management to deliver secure, fixed-income opportunities for investors.
           </p>
         </div>
 
@@ -45,7 +44,7 @@ const Team = () => {
                 <div className="relative mx-auto w-32 h-32 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300">
                   <img 
                     src={member.image} 
-                    alt={member.name}
+                    alt={`${member.name} - ${member.role} at Anvita Capital Fund LLC`}
                     className="w-full h-full object-cover"
                   />
                 </div>
