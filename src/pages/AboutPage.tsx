@@ -81,15 +81,15 @@ const AboutPage = () => {
         </section>
 
         {/* Stats */}
-        <section className="max-w-7xl mx-auto px-6 -mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <section className="relative max-w-7xl mx-auto px-6 mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
           {[
             { label: 'Established', value: '2005' },
             { label: 'Projects', value: 'Ongoing + Delivered' },
             { label: 'Focus', value: 'Residential' },
             { label: 'Promise', value: 'On‑time Delivery' },
           ].map((s, i) => (
-            <Card key={i} className="shadow-card hover:shadow-elegant transition-all duration-300">
-              <CardContent className="p-5 text-center">
+            <Card key={i} className="shadow-card hover:shadow-elegant transition-all duration-300 rounded-xl">
+              <CardContent className="p-6 md:p-7 text-center space-y-1">
                 <div className="text-2xl font-bold text-primary font-display">{s.value}</div>
                 <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
               </CardContent>
