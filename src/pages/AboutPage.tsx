@@ -55,19 +55,40 @@ const AboutPage = () => {
     <div className="min-h-screen">
       <Navigation />
       <main className="pt-24">
-        <header className="text-center px-6 mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary">About Anvita Group</h1>
-          <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
-            Founded in 2005, Anvita Group is a trusted real estate developer known for quality, reliability, and on‑time delivery—guided by a leadership culture that emphasizes integrity, transparency, and innovation.
-          </p>
-        </header>
+        {/* Hero */}
+        <section className="relative bg-gradient-card">
+          <div className="max-w-7xl mx-auto px-6 py-20 text-center animate-fade-in">
+            <h1 className="text-5xl md:text-6xl font-bold text-primary font-display">About Anvita Group</h1>
+            <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Founded in 2005, Anvita Group is a trusted real estate developer known for quality, reliability, and on‑time delivery—guided by a leadership culture that emphasizes integrity, transparency, and innovation.
+            </p>
+          </div>
+        </section>
 
-        <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Stats */}
+        <section className="max-w-7xl mx-auto px-6 -mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {[
+            { label: 'Established', value: '2005' },
+            { label: 'Projects', value: 'Ongoing + Delivered' },
+            { label: 'Focus', value: 'Residential' },
+            { label: 'Promise', value: 'On‑time Delivery' },
+          ].map((s, i) => (
+            <Card key={i} className="shadow-card">
+              <CardContent className="p-5 text-center">
+                <div className="text-2xl font-bold text-primary font-display">{s.value}</div>
+                <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
+              </CardContent>
+            </Card>
+          ))}
+        </section>
+
+        {/* Content */}
+        <section className="mt-12 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Overview */}
           <article className="lg:col-span-2 space-y-6">
             <Card className="shadow-card">
               <CardContent className="p-6 space-y-4">
-                <h2 className="text-2xl font-semibold text-primary">Who We Are</h2>
+                <h2 className="text-2xl font-semibold text-primary font-display">Who We Are</h2>
                 <p className="text-muted-foreground">
                   With a proven track record since 2005, Anvita Group has become a respected name in residential development. The team blends craftsmanship with modern construction practices, focusing on precision, attention to detail, and customer satisfaction.
                 </p>
@@ -115,13 +136,13 @@ const AboutPage = () => {
             </Card>
           </article>
 
-          {/* Fast Facts */}
+          {/* Fast Facts and Timeline */}
           <aside className="space-y-6">
             <Card className="shadow-card bg-gradient-card border-0">
               <CardContent className="p-6 space-y-3">
                 <div className="flex items-center space-x-3">
                   <Factory className="w-5 h-5 text-accent" />
-                  <h3 className="text-xl font-semibold text-primary">Fast Facts</h3>
+                  <h3 className="text-xl font-semibold text-primary font-display">Fast Facts</h3>
                 </div>
                 <ul className="text-muted-foreground space-y-2">
                   <li><CheckCircle2 className="inline w-4 h-4 mr-2 text-accent" /> Established in 2005</li>
@@ -133,9 +154,26 @@ const AboutPage = () => {
             </Card>
 
             <Card className="shadow-card">
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-semibold text-primary">Ongoing Highlight</h3>
-                <p className="text-muted-foreground">Anvita Ivana (Kollur, Exit 2): A modern residential community that reflects the Group’s commitment to design and quality.</p>
+              <CardContent className="p-6 space-y-4">
+                <h3 className="text-xl font-semibold text-primary font-display">Timeline</h3>
+                <ol className="relative border-l border-border pl-4 space-y-4">
+                  <li>
+                    <div className="text-sm text-muted-foreground">2005</div>
+                    <div className="font-medium text-primary">Founded with a quality‑first vision</div>
+                  </li>
+                  <li>
+                    <div className="text-sm text-muted-foreground">2010s</div>
+                    <div className="font-medium text-primary">Growth across residential communities</div>
+                  </li>
+                  <li>
+                    <div className="text-sm text-muted-foreground">2020s</div>
+                    <div className="font-medium text-primary">Innovation in design and project management</div>
+                  </li>
+                  <li>
+                    <div className="text-sm text-muted-foreground">Today</div>
+                    <div className="font-medium text-primary">Trusted brand focused on on‑time delivery</div>
+                  </li>
+                </ol>
               </CardContent>
             </Card>
 
