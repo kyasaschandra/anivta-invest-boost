@@ -5,35 +5,51 @@ const InvestmentObjectives = () => {
   const objectives = [
     {
       icon: TrendingUp,
-      title: "Predictable Fixed Income",
-      description: "Generate predictable, fixed income for accredited investors"
+      title: "Deliver Predictable, Fixed Income",
+      description: "Provide accredited investors with stable, contractually defined returns through secured real estate debt instruments."
     },
     {
       icon: Target,
-      title: "Secured Projects Only",
-      description: "Deploy capital only to secured Anvita Group projects"
+      title: "Invest Exclusively in Anvita Group Projects",
+      description: "Deploy capital only into vetted, high-quality developments backed by Anvita Group’s proven track record."
     },
     {
       icon: Shield,
-      title: "Capital Preservation",
-      description: "Preserve investor capital via asset-backed structures"
+      title: "Preserve Capital Through Asset-Backed Security",
+      description: "Ensure all investments are secured by tangible real estate assets in prime, high-demand markets."
     },
     {
       icon: Leaf,
-      title: "Sustainable Impact",
-      description: "Deliver social and environmental impact through sustainable development"
+      title: "Promote Sustainable Growth",
+      description: "Drive projects that contribute to urban development, create jobs, and integrate eco-friendly, resource-efficient practices."
     },
     {
       icon: DollarSign,
-      title: "No FX Risk",
-      description: "No FX risk – both investment and distributions in USD"
+      title: "Eliminate Foreign Exchange Risk",
+      description: "Maintain both investment and distributions in USD to safeguard returns from currency volatility."
     },
     {
       icon: BadgeCheck,
-      title: "Transparency & Compliance",
-      description: "Ensure transparency with regular updates, audits, and full regulatory compliance"
+      title: "Uphold Full Transparency and Governance",
+      description: "Commit to regular investor updates, independent audits, and strict adherence to all applicable laws and regulations."
     }
   ];
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Investment Objectives",
+    itemListElement: objectives.map((o, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: o.title,
+      item: {
+        "@type": "Thing",
+        name: o.title,
+        description: o.description,
+      },
+    })),
+  } as const;
 
   return (
     <section className="py-16 bg-gradient-subtle">
@@ -66,6 +82,11 @@ const InvestmentObjectives = () => {
             </Card>
           ))}
         </div>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </div>
     </section>
   );
