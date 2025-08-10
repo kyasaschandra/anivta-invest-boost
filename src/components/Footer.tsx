@@ -6,13 +6,13 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-hero text-white">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-6 py-20 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Company Info */}
           <div className="space-y-6">
             <div>
               <h3 className="text-2xl font-bold">Anivta Capital</h3>
-              <p className="text-white/80 mt-2">
+              <p className="text-white/80 mt-2 leading-relaxed">
                 Strategic investment solutions for sustainable growth and exceptional returns.
               </p>
             </div>
@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/20 mt-12 pt-8">
+        <div className="border-t border-white/20 mt-14 md:mt-16 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-white/60 text-sm">
               © {currentYear} Anivta Capital Fund. All rights reserved.
