@@ -36,13 +36,13 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+1 (945) 217-9280",
+      href: "tel:+19452179280"
     },
     {
       icon: MapPin,
       label: "Office",
-      value: "Texas, United States",
+      value: "Suite #301, 9300 John Hickman Pkwy, Frisco, TX 75035",
       href: "#"
     }
   ];
