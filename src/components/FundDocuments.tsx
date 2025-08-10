@@ -7,9 +7,9 @@ const FundDocuments = () => {
   const ppmHref = "/docs/anvita-capital-ppm.pdf"; // replace with your final PPM path when ready
 
   return (
-    <section id="fund-documents" aria-labelledby="fund-documents-heading" className="min-h-screen snap-start py-12 md:py-24 bg-gradient-card flex items-center">
+    <section id="fund-documents" aria-labelledby="fund-documents-heading" className="snap-start py-10 md:py-16 bg-gradient-card">
       <div className="max-w-7xl mx-auto px-6 w-full">
-        <header className="text-center space-y-3 mb-8">
+        <header className="text-center space-y-3 mb-6">
           <h2 id="fund-documents-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">
             Fund Documents
           </h2>

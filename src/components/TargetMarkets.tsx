@@ -97,9 +97,9 @@ const TargetMarkets = () => {
   } as const;
 
   return (
-    <section id="target-markets" aria-labelledby="target-markets-heading" className="min-h-screen snap-start py-12 md:py-20 bg-gradient-to-b from-background to-muted/20 flex items-center">
+    <section id="target-markets" aria-labelledby="target-markets-heading" className="snap-start py-10 md:py-16 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
-        <header className="mx-auto max-w-3xl text-center mb-12">
+        <header className="mx-auto max-w-3xl text-center mb-8">
           <h2 id="target-markets-heading" className="text-3xl md:text-4xl font-bold tracking-tight text-primary">
             Target Markets
           </h2>

@@ -48,10 +48,10 @@ const Contact = () => {
   ];
 
   return (
-    <section className="min-h-screen snap-start py-12 md:py-24 bg-background flex items-center">
+    <section className="snap-start py-10 md:py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center space-y-4 mb-16">
+        <div className="text-center space-y-4 mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">
             Accredited Investor Opportunities
           </h2>

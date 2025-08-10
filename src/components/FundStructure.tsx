@@ -61,13 +61,13 @@ const FundStructure = () => {
   } as const;
 
   return (
-    <section id="fund-structure" className="min-h-screen snap-start py-12 md:py-24 bg-gradient-subtle flex items-center">
+    <section id="fund-structure" className="snap-start py-10 md:py-16 bg-gradient-subtle">
       <div className="max-w-7xl mx-auto px-6">
         {/* Fund Structure */}
         <div className="text-center space-y-4 mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">Fund Structure</h2>
         </div>
-        <Card className="mb-16 border-0 bg-white/50 backdrop-blur-sm shadow-elegant">
+        <Card className="mb-10 border-0 bg-white/50 backdrop-blur-sm shadow-elegant">
           <CardHeader>
             <CardTitle className="text-2xl">Key Details</CardTitle>
           </CardHeader>
@@ -89,7 +89,7 @@ const FundStructure = () => {
         </Card>
 
         {/* Investment Options */}
-        <div id="investment-options" className="text-center space-y-3 mb-8">
+        <div id="investment-options" className="text-center space-y-3 mb-6">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">Investment Options</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-sm md:text-base">
             We offer three structured note series, allowing investors to choose the return frequency that best matches their income goals.
