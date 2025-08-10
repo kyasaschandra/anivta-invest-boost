@@ -27,16 +27,16 @@ const Navigation = () => {
         : "bg-transparent"
     }`}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-16 md:h-20 overflow-hidden">
           <a href="/" className="flex items-center space-x-2" aria-label="Anvita Capital home">
             <img
               src="/lovable-uploads/89343412-3f23-4f7b-a630-9fac8175f2a0.png"
               alt="Anvita logo mark"
-              className="h-8 w-8 md:h-10 md:w-10 object-contain"
+              className="h-7 w-7 md:h-9 md:w-9 object-contain shrink-0"
               loading="eager"
               decoding="sync"
             />
-            <span className={`font-display text-2xl md:text-3xl tracking-tight transition-colors ${isScrolled ? 'text-primary' : 'text-white'}`}>
+            <span className={`font-display text-xl md:text-2xl tracking-tight whitespace-nowrap transition-colors ${isScrolled ? 'text-primary' : 'text-white'}`}>
               Capital Fund
             </span>
           </a>
