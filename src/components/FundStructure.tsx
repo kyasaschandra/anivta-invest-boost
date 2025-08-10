@@ -18,7 +18,7 @@ const FundStructure = () => {
   ];
 
   return (
-    <section id="fund-structure" className="py-16 md:py-24 bg-gradient-subtle">
+    <section id="fund-structure" className="min-h-screen snap-start py-12 md:py-24 bg-gradient-subtle flex items-center">
       <div className="max-w-7xl mx-auto px-6">
         {/* Fund Structure */}
         <div className="text-center space-y-4 mb-10">

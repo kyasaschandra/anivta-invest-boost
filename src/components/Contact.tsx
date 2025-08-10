@@ -48,7 +48,7 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="min-h-screen snap-start py-12 md:py-24 bg-background flex items-center">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">

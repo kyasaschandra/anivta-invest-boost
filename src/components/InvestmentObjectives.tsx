@@ -52,7 +52,7 @@ const InvestmentObjectives = () => {
   } as const;
 
   return (
-    <section className="py-16 bg-gradient-subtle">
+    <section className="min-h-screen snap-start py-12 md:py-16 bg-gradient-subtle flex items-center">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center space-y-2 mb-10">
