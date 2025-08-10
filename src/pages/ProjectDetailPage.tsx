@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { projects } from "@/data/projects";
+import { ExternalLink } from "lucide-react";
 
 const setSEO = (title: string, description: string, canonical?: string) => {
   document.title = title;
@@ -73,17 +74,16 @@ const ProjectDetailPage = () => {
               />
             </AspectRatio>
             {project.externalUrl && (
-              <p className="mt-4 text-sm">
-                <span className="text-muted-foreground">For more details:</span>{' '}
-                <a
-                  href={project.externalUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline text-accent"
-                >
-                  Explore details
-                </a>
-              </p>
+              <a
+                href={project.externalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline"
+                aria-label={`Visit the official ${project.title} site`}
+              >
+                Visit official project site
+                <ExternalLink className="h-4 w-4" aria-hidden="true" />
+              </a>
             )}
           </section>
 

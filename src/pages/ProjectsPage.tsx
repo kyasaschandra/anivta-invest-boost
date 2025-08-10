@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { projects } from "@/data/projects";
+import { ExternalLink } from "lucide-react";
 
 const setSEO = (title: string, description: string, canonical?: string) => {
   document.title = title;
@@ -66,17 +67,16 @@ const ProjectsPage = () => {
                         {project.description}
                       </p>
                       {project.externalUrl && (
-                        <p className="text-sm mt-3">
-                          <span className="text-muted-foreground">For more details:</span>{' '}
-                          <a
-                            href={project.externalUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline text-accent"
-                          >
-                            Explore details
-                          </a>
-                        </p>
+                        <a
+                          href={project.externalUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline"
+                          aria-label={`Visit the official ${project.title} site`}
+                        >
+                          Visit official project site
+                          <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                        </a>
                       )}
                     </CardContent>
                   </Card>
