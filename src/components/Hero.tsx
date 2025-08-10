@@ -39,9 +39,6 @@ const Hero = () => {
               Start Investing
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-primary">
-              Learn More
-            </Button>
           </div>
           
           {/* Trust Indicators */}
