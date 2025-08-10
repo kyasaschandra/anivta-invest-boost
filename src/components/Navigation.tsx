@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, TrendingUp } from "lucide-react";
+import { Menu, X, Leaf } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,16 +28,11 @@ const Navigation = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20 md:h-24">
-          <a href="/" className="flex items-center space-x-3 rounded-xl bg-background/80 backdrop-blur-sm ring-1 ring-border px-2 md:px-3 py-1" aria-label="Anvita Capital home">
-            <img
-              src="/lovable-uploads/89343412-3f23-4f7b-a630-9fac8175f2a0.png"
-              alt="Anvita Capital logo — Building Happiness"
-              width="160"
-              height="60"
-              className="h-12 md:h-16 w-auto object-contain drop-shadow-lg"
-              loading="eager"
-              decoding="sync"
-            />
+          <a href="/" className="flex items-center space-x-2" aria-label="Anvita Capital home">
+            <Leaf className={`w-6 h-6 ${isScrolled ? 'text-accent' : 'text-accent'}`} aria-hidden="true" />
+            <span className={`font-display text-3xl md:text-4xl tracking-tight transition-colors ${isScrolled ? 'text-primary' : 'text-white'}`}>
+              Anvita <span className="text-accent">Capital</span>
+            </span>
           </a>
 
           {/* Desktop Navigation */}
