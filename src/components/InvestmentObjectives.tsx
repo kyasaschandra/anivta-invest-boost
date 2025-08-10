@@ -1,4 +1,4 @@
-import { Target, Shield, TrendingUp, Leaf, DollarSign } from "lucide-react";
+import { Target, Shield, TrendingUp, Leaf, DollarSign, BadgeCheck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const InvestmentObjectives = () => {
@@ -27,6 +27,11 @@ const InvestmentObjectives = () => {
       icon: DollarSign,
       title: "No FX Risk",
       description: "No FX risk – both investment and distributions in USD"
+    },
+    {
+      icon: BadgeCheck,
+      title: "Transparency & Compliance",
+      description: "Ensure transparency with regular updates, audits, and full regulatory compliance"
     }
   ];
 
