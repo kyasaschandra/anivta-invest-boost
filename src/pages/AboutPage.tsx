@@ -8,7 +8,7 @@ import heroBackground from "@/assets/hero-background.jpg";
 
 const AboutPage = () => {
   useEffect(() => {
-    document.title = "About Anvita Group | Sponsor Overview";
+    document.title = "About Anvita Capital | Real Estate Fund Managers";
 
     // Meta description
     let meta = document.querySelector('meta[name="description"]');
@@ -19,7 +19,7 @@ const AboutPage = () => {
     }
     meta.setAttribute(
       'content',
-      'Discover Anvita Group: established in 2005, delivering quality, reliable, on‑time real estate developments backed by innovation and strong leadership.'
+      'Anvita Group real estate development and experienced real estate fund managers with 20+ years across the U.S., India, and UAE; sustainable investment focus.'
     );
 
     // Canonical

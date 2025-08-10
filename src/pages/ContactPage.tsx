@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 const ContactPage = () => {
   useEffect(() => {
     // Title
-    document.title = "Contact Anvita Capital Fund LLC";
+    document.title = "Invest with Anvita Capital Fund | Investor Relations";
 
     // Meta description
     let meta = document.querySelector('meta[name="description"]');
@@ -15,10 +15,7 @@ const ContactPage = () => {
       meta.setAttribute('name', 'description');
       document.head.appendChild(meta);
     }
-    meta.setAttribute(
-      'content',
-      'Contact Anvita Capital Fund LLC for accredited investor inquiries about secured real estate debt opportunities.'
-    );
+    meta.setAttribute('content', 'Accredited investor inquiries for our private placement, USD-denominated real estate debt fund. Contact Anvita Capital investor relations.');
 
     // Canonical
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;

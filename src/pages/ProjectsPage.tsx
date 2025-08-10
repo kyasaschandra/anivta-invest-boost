@@ -28,8 +28,8 @@ const setSEO = (title: string, description: string, canonical?: string) => {
 const ProjectsPage = () => {
   useEffect(() => {
     setSEO(
-      "Ongoing Projects | Anvita Capital",
-      "Explore ongoing real estate projects in India from Anvita Capital Fund.",
+      "Real Estate Projects in USA, India, UAE | Anvita Capital",
+      "Explore USA (Texas), India, and UAE developments including residential, commercial, and sustainable LEED & IGBC-certified projects.",
       window.location.origin + "/projects"
     );
   }, []);
