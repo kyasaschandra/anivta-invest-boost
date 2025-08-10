@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { FileText, ChevronDown, ChevronUp, ShieldAlert } from "lucide-react";
+import { FileText, ChevronDown, ShieldAlert, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -74,6 +73,46 @@ const FundDocuments = () => {
                     </p>
                     <p>
                       Anvita Capital Fund LLC is managed by Anvita Capital Fund MGR LLC, which may partner with affiliated or third-party service providers for administrative, operational, and compliance functions. Anvita Capital Fund LLC is not a bank, and no banking or custodial services are provided by the Fund.
+                    </p>
+                  </CardContent>
+                </CollapsibleContent>
+              </Collapsible>
+            </CardHeader>
+          </Card>
+        </div>
+
+        {/* Portfolio Disclosure under Fund Documents */}
+        <div className="mx-auto max-w-3xl mt-6">
+          <Card className="border border-border shadow-sm">
+            <CardHeader className="flex-row items-center justify-between space-y-0">
+              <div className="flex items-center gap-3">
+                <div className="inline-flex w-10 h-10 items-center justify-center rounded-full bg-gradient-primary text-white">
+                  <Briefcase className="w-5 h-5" />
+                </div>
+                <CardTitle className="text-xl text-primary">Portfolio Disclosure</CardTitle>
+              </div>
+              <Collapsible>
+                <CollapsibleTrigger asChild>
+                  <Button variant="outline" size="sm" className="whitespace-nowrap">
+                    <ChevronDown className="w-4 h-4 mr-1"/> Read portfolio disclosure
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <CardContent className="pt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                    <p>
+                      The portfolio of Anvita Capital Fund LLC will be comprised exclusively of secured debt investments in residential and commercial real estate projects sponsored, developed, or co-developed by Anvita Group. All investments will be collateralized by tangible real estate assets located in targeted high-growth markets within the United States, India, and the United Arab Emirates.
+                    </p>
+                    <p>
+                      The Fund seeks to maintain diversification across asset classes, project stages, and geographies to help mitigate market-specific risks. However, portfolio diversification does not eliminate risk, and the performance of individual investments may vary significantly. There is no assurance that the Fund will achieve its investment objectives or that investors will receive any return of or on their invested capital.
+                    </p>
+                    <p>
+                      The composition of the portfolio is expected to change over time based on market conditions, investment opportunities, and the discretion of the Manager, Anvita Capital Fund MGR LLC. The Fund’s investments are illiquid, and investors should not expect to have access to their capital prior to the stated maturity or redemption periods, except as provided in the governing agreements.
+                    </p>
+                    <p>
+                      Portfolio performance will depend on numerous factors, including the quality of underlying collateral, the ability of project sponsors to complete developments on time and within budget, and overall real estate market conditions. While the Manager will employ rigorous due diligence, milestone-based funding, and risk mitigation strategies, there can be no assurance that such measures will prevent losses.
+                    </p>
+                    <p>
+                      Past performance of Anvita Group or its affiliates is not necessarily indicative of future results, and the value of portfolio assets may fluctuate. All portfolio valuations are subject to change and may not reflect actual liquidation values.
                     </p>
                   </CardContent>
                 </CollapsibleContent>
