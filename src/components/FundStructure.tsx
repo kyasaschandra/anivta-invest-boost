@@ -12,10 +12,52 @@ const FundStructure = () => {
   ];
 
   const series = [
-    { name: "Series 1", roi: "11% ROI", payout: "Quarterly payouts", tenor: "36 months" },
-    { name: "Series 2", roi: "11.50% ROI", payout: "Half-yearly payouts", tenor: "36 months" },
-    { name: "Series 3", roi: "12% ROI", payout: "Annual payouts", tenor: "36 months" },
+    {
+      name: "Series 1",
+      subtitle: "Quarterly Income",
+      roi: "Target ROI: 11% p.a.",
+      payout: "Payouts: Every 3 months",
+      tenor: "Tenure: 36 months",
+      description:
+        "Ideal for investors seeking a steady, frequent cash flow while maintaining capital security.",
+    },
+    {
+      name: "Series 2",
+      subtitle: "Semi-Annual Income",
+      roi: "Target ROI: 11.50% p.a.",
+      payout: "Payouts: Every 6 months",
+      tenor: "Tenure: 36 months",
+      description:
+        "Balances higher yield with moderate payout frequency for those preferring fewer disbursements.",
+    },
+    {
+      name: "Series 3",
+      subtitle: "Annual Income",
+      roi: "Target ROI: 12% p.a.",
+      payout: "Payouts: Once per year",
+      tenor: "Tenure: 36 months",
+      description:
+        "Designed for investors comfortable with annual disbursements, maximizing yield over the investment term.",
+    },
   ];
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Investment Options",
+    itemListElement: series.map((s, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: `${s.name} — ${s.subtitle}`,
+      item: {
+        "@type": "Offer",
+        name: s.name,
+        description: `${s.roi}; ${s.payout}; ${s.tenor}. ${s.description}`,
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+      },
+    })),
+  } as const;
 
   return (
     <section id="fund-structure" className="min-h-screen snap-start py-12 md:py-24 bg-gradient-subtle flex items-center">
@@ -46,14 +88,18 @@ const FundStructure = () => {
         </Card>
 
         {/* Investment Options */}
-        <div id="investment-options" className="text-center space-y-4 mb-10">
+        <div id="investment-options" className="text-center space-y-3 mb-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">Investment Options</h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto text-sm md:text-base">
+            We offer three structured note series, allowing investors to choose the return frequency that best matches their income goals.
+          </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {series.map((s, i) => (
             <Card key={i} className="group hover:shadow-elegant transition-all duration-300 border-0 bg-white/50 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-xl text-primary">{s.name}</CardTitle>
+                <p className="text-sm text-muted-foreground">{s.subtitle}</p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -74,10 +120,15 @@ const FundStructure = () => {
                   </div>
                   <span className="text-muted-foreground">{s.tenor}</span>
                 </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </div>
     </section>
   );
