@@ -98,7 +98,7 @@ const AboutPage = () => {
         </section>
 
         {/* Content */}
-        <section className="mt-12 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <section className="mt-12 mb-16 md:mb-24 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Overview */}
           <article className="lg:col-span-2 space-y-6">
             <Card className="shadow-card">
