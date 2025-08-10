@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Award, CheckCircle2, Factory, Building2, Rocket } from "lucide-react";
+import { Award, CheckCircle2, Factory, Building2, Rocket, ShieldCheck, Clock, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroBackground from "@/assets/hero-background.jpg";
 
 const AboutPage = () => {
   useEffect(() => {
@@ -56,12 +57,26 @@ const AboutPage = () => {
       <Navigation />
       <main className="pt-24">
         {/* Hero */}
-        <section className="relative bg-gradient-card">
-          <div className="max-w-7xl mx-auto px-6 py-20 text-center animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold text-primary font-display">About Anvita Group</h1>
-            <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBackground})` }}>
+            <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
+          </div>
+          <div className="relative max-w-7xl mx-auto px-6 py-24 text-center text-white">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+              <span className="text-sm font-medium">Building Happiness since 2005</span>
+            </div>
+            <h1 className="mt-6 text-5xl md:text-6xl font-bold font-display">About Anvita Group</h1>
+            <p className="mt-4 text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
               Founded in 2005, Anvita Group is a trusted real estate developer known for quality, reliability, and on‑time delivery—guided by a leadership culture that emphasizes integrity, transparency, and innovation.
             </p>
+            <div className="mt-8 flex justify-center gap-4">
+              <Button asChild size="lg" variant="hero" className="group">
+                <a href="/contact">Contact Investor Relations</a>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-primary" asChild>
+                <a href="https://www.anvitagroup.com/" rel="noopener noreferrer" target="_blank">Visit Anvita Group</a>
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -73,7 +88,7 @@ const AboutPage = () => {
             { label: 'Focus', value: 'Residential' },
             { label: 'Promise', value: 'On‑time Delivery' },
           ].map((s, i) => (
-            <Card key={i} className="shadow-card">
+            <Card key={i} className="shadow-card hover:shadow-elegant transition-all duration-300">
               <CardContent className="p-5 text-center">
                 <div className="text-2xl font-bold text-primary font-display">{s.value}</div>
                 <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
@@ -124,7 +139,7 @@ const AboutPage = () => {
               <CardContent className="p-6 space-y-3">
                 <div className="flex items-center space-x-3">
                   <Building2 className="w-5 h-5 text-accent" />
-                  <h3 className="text-xl font-semibold text-primary">Expertise</h3>
+                  <h3 className="text-xl font-semibold text-primary font-display">Expertise</h3>
                 </div>
                 <p className="text-muted-foreground">End‑to‑end residential development with a focus on gated communities and modern living—supported by rigorous project management and quality control.</p>
                 <ul className="list-disc pl-6 text-muted-foreground space-y-1">
@@ -134,6 +149,36 @@ const AboutPage = () => {
                 </ul>
               </CardContent>
             </Card>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="shadow-card">
+                <CardContent className="p-6 space-y-2">
+                  <div className="flex items-center space-x-3">
+                    <ShieldCheck className="w-5 h-5 text-accent" />
+                    <h3 className="text-lg font-semibold text-primary font-display">Quality & Safety</h3>
+                  </div>
+                  <p className="text-muted-foreground">Rigorous QC, precision execution, and durable materials across projects.</p>
+                </CardContent>
+              </Card>
+              <Card className="shadow-card">
+                <CardContent className="p-6 space-y-2">
+                  <div className="flex items-center space-x-3">
+                    <Clock className="w-5 h-5 text-accent" />
+                    <h3 className="text-lg font-semibold text-primary font-display">On‑Time Delivery</h3>
+                  </div>
+                  <p className="text-muted-foreground">Disciplined planning and project controls that keep timelines on track.</p>
+                </CardContent>
+              </Card>
+              <Card className="shadow-card">
+                <CardContent className="p-6 space-y-2">
+                  <div className="flex items-center space-x-3">
+                    <Handshake className="w-5 h-5 text-accent" />
+                    <h3 className="text-lg font-semibold text-primary font-display">Trust & Transparency</h3>
+                  </div>
+                  <p className="text-muted-foreground">Clear communication and accountability from launch to handover.</p>
+                </CardContent>
+              </Card>
+            </div>
           </article>
 
           {/* Fast Facts and Timeline */}
