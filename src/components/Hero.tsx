@@ -25,11 +25,11 @@ const Hero = () => {
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="text-6xl md:text-7xl font-bold leading-tight">
-              Anivta Capital
-              <span className="block text-accent">Fund</span>
+              Anvita Capital
+              <span className="block text-accent">Fund LLC</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Strategic investment solutions that drive sustainable growth and deliver exceptional returns for forward-thinking investors.
+              A secured, fixed-income real estate debt fund providing asset-backed investment opportunities with predictable returns for accredited investors.
             </p>
           </div>
           
@@ -52,11 +52,11 @@ const Hero = () => {
             </div>
             <div className="flex items-center justify-center space-x-3">
               <Users className="w-6 h-6 text-accent" />
-              <span className="text-white/80">500+ Investors</span>
+              <span className="text-white/80">Accredited Investors</span>
             </div>
             <div className="flex items-center justify-center space-x-3">
               <TrendingUp className="w-6 h-6 text-accent" />
-              <span className="text-white/80">25% Avg. Returns</span>
+              <span className="text-white/80">Fixed Returns</span>
             </div>
           </div>
         </div>

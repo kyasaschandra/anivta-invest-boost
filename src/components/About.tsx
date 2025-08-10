@@ -5,23 +5,23 @@ const About = () => {
   const features = [
     {
       icon: Target,
-      title: "Strategic Focus",
-      description: "We specialize in growth-stage companies with proven business models and strong market positions."
+      title: "Asset-Backed Security",
+      description: "Loans secured by prime real estate assets in the USA, India, and UAE, ensuring capital preservation and stability."
     },
     {
       icon: Lightbulb,
-      title: "Innovation First",
-      description: "Our investment philosophy centers on companies driving technological innovation and market disruption."
+      title: "Fixed Income Strategy",
+      description: "Predictable quarterly, half-yearly, or annual payouts with no foreign exchange exposure - all USD denominated."
     },
     {
       icon: Award,
-      title: "Proven Track Record",
-      description: "Over 4 years of consistent outperformance with a portfolio spanning multiple high-growth sectors."
+      title: "Proven Sponsor",
+      description: "Backed by Anvita Group's track record and expertise in residential and commercial real estate development."
     },
     {
       icon: Globe,
-      title: "Global Reach",
-      description: "International investment opportunities across North America, Europe, and emerging markets."
+      title: "Global Portfolio",
+      description: "Diversified real estate debt investments across three key markets: United States, India, and United Arab Emirates."
     }
   ];
 
@@ -31,11 +31,10 @@ const About = () => {
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary">
-            Investment Excellence
+            Secured Real Estate Debt Fund
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Anivta Capital Fund combines deep market expertise with innovative investment strategies 
-            to deliver superior returns while managing risk through diversified portfolio management.
+            Anvita Capital Fund LLC provides secured, fixed-income investment opportunities through first-lien and mezzanine debt structures backed by high-quality real estate assets.
           </p>
         </div>
 
@@ -57,16 +56,16 @@ const About = () => {
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center space-y-2">
-            <div className="text-4xl font-bold text-primary">$500M+</div>
-            <div className="text-muted-foreground">Assets Under Management</div>
+            <div className="text-4xl font-bold text-primary">$25M</div>
+            <div className="text-muted-foreground">Target Fund Raise</div>
           </div>
           <div className="text-center space-y-2">
-            <div className="text-4xl font-bold text-success">25%</div>
-            <div className="text-muted-foreground">Average Annual Returns</div>
+            <div className="text-4xl font-bold text-success">36</div>
+            <div className="text-muted-foreground">Months Lock-In Period</div>
           </div>
           <div className="text-center space-y-2">
-            <div className="text-4xl font-bold text-primary">50+</div>
-            <div className="text-muted-foreground">Portfolio Companies</div>
+            <div className="text-4xl font-bold text-primary">3</div>
+            <div className="text-muted-foreground">Global Markets</div>
           </div>
         </div>
       </div>

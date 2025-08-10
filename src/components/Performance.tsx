@@ -6,30 +6,30 @@ const Performance = () => {
   const metrics = [
     {
       icon: TrendingUp,
-      label: "5-Year Returns",
-      value: "185%",
-      change: "+12% vs benchmark",
+      label: "Fixed Returns",
+      value: "Targeted",
+      change: "Quarterly/Semi-Annual",
       positive: true
     },
     {
       icon: BarChart3,
-      label: "Sharpe Ratio",
-      value: "1.45",
-      change: "Above industry avg",
+      label: "USD Denominated",
+      value: "100%",
+      change: "No FX exposure",
       positive: true
     },
     {
       icon: PieChart,
-      label: "Portfolio Diversity",
-      value: "15",
-      change: "Sectors covered",
+      label: "Asset Security",
+      value: "First-Lien",
+      change: "Real estate backed",
       positive: true
     },
     {
       icon: Activity,
-      label: "Volatility",
-      value: "8.2%",
-      change: "Below market avg",
+      label: "Fund Structure",
+      value: "Reg D",
+      change: "506(c) Compliant",
       positive: true
     }
   ];
@@ -40,10 +40,10 @@ const Performance = () => {
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary">
-            Performance Metrics
+            Fund Structure & Benefits
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Transparent reporting and consistent outperformance across market cycles demonstrate our commitment to investor success.
+            Our structured approach ensures predictable returns through rigorous due diligence, milestone-based funding, and strong asset security.
           </p>
         </div>
 
@@ -97,22 +97,22 @@ const Performance = () => {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <Card className="text-center p-8 bg-gradient-card border-0 shadow-card">
             <CardContent className="space-y-4">
-              <div className="text-3xl font-bold text-success">98%</div>
-              <div className="text-muted-foreground">Client Retention Rate</div>
+              <div className="text-3xl font-bold text-success">LEED/IGBC</div>
+              <div className="text-muted-foreground">Sustainability Focus</div>
             </CardContent>
           </Card>
           
           <Card className="text-center p-8 bg-gradient-card border-0 shadow-card">
             <CardContent className="space-y-4">
-              <div className="text-3xl font-bold text-primary">4.9/5</div>
-              <div className="text-muted-foreground">Investor Satisfaction</div>
+              <div className="text-3xl font-bold text-primary">Anvita Group</div>
+              <div className="text-muted-foreground">Proven Sponsor</div>
             </CardContent>
           </Card>
           
           <Card className="text-center p-8 bg-gradient-card border-0 shadow-card">
             <CardContent className="space-y-4">
-              <div className="text-3xl font-bold text-accent">AAA</div>
-              <div className="text-muted-foreground">Credit Rating</div>
+              <div className="text-3xl font-bold text-accent">Milestone</div>
+              <div className="text-muted-foreground">Based Funding</div>
             </CardContent>
           </Card>
         </div>

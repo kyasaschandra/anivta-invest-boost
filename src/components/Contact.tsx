@@ -30,8 +30,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "invest@anivtacapital.com",
-      href: "mailto:invest@anivtacapital.com"
+      value: "invest@anvitacapital.com",
+      href: "mailto:invest@anvitacapital.com"
     },
     {
       icon: Phone,
@@ -42,7 +42,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "Office",
-      value: "555 Park Avenue, New York, NY 10022",
+      value: "Texas, United States",
       href: "#"
     }
   ];
@@ -53,11 +53,11 @@ const Contact = () => {
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary">
-            Start Your Investment Journey
+            Accredited Investor Opportunities
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to explore investment opportunities with Anivta Capital? 
-            Contact our team to discuss your investment goals and portfolio requirements.
+            Explore secured, fixed-income real estate debt opportunities with Anvita Capital Fund LLC. 
+            Contact our team to learn about our asset-backed investment structure.
           </p>
         </div>
 
@@ -166,16 +166,16 @@ const Contact = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Individual Investors</span>
-                  <span className="font-semibold text-primary">$250K</span>
+                  <span className="text-muted-foreground">Minimum Investment</span>
+                  <span className="font-semibold text-primary">$100K</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Institutional</span>
-                  <span className="font-semibold text-primary">$1M</span>
+                  <span className="text-muted-foreground">Target Raise</span>
+                  <span className="font-semibold text-primary">$25M</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Accredited Investors</span>
-                  <span className="font-semibold text-primary">$500K</span>
+                  <span className="text-muted-foreground">Lock-In Period</span>
+                  <span className="font-semibold text-primary">36 Months</span>
                 </div>
               </CardContent>
             </Card>
