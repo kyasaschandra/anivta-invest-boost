@@ -24,7 +24,7 @@ const Hero = () => {
           
           {/* Main Heading */}
           <div className="space-y-4">
-            <h1 className="mx-auto w-fit rounded-2xl bg-background/20 backdrop-blur-sm px-6 py-4 text-7xl md:text-8xl font-bold leading-tight tracking-tight drop-shadow-lg">
+            <h1 className="mx-auto w-fit rounded-2xl bg-background/20 backdrop-blur-sm px-4 py-3 sm:px-6 sm:py-4 text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
               Anvita Capital
               <span className="block text-accent">Fund LLC</span>
             </h1>

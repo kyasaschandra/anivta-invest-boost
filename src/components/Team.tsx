@@ -24,7 +24,7 @@ const Team = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-card">
+    <section className="py-16 md:py-24 bg-gradient-card">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
@@ -37,7 +37,7 @@ const Team = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2">
               <CardContent className="p-8 text-center space-y-6">

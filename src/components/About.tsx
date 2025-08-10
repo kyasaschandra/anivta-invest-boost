@@ -26,24 +26,24 @@ const About = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-card">
+    <section className="py-16 md:py-24 bg-gradient-card">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">
             Secured Real Estate Debt Fund
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             Anvita Capital Fund LLC provides secured, fixed-income investment opportunities through first-lien and mezzanine debt structures backed by high-quality real estate assets.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
           {features.map((feature, index) => (
             <Card key={index} className="group hover:shadow-card transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-6 text-center space-y-4">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-primary text-white group-hover:scale-110 transition-transform duration-300">
+              <CardContent className="p-5 md:p-6 text-center space-y-4">
+                <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-primary text-white group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold text-primary">{feature.title}</h3>
@@ -54,17 +54,17 @@ const About = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           <div className="text-center space-y-2">
-            <div className="text-4xl font-bold text-primary">$25M</div>
+            <div className="text-3xl md:text-4xl font-bold text-primary">$25M</div>
             <div className="text-muted-foreground">Target Fund Raise</div>
           </div>
           <div className="text-center space-y-2">
-            <div className="text-4xl font-bold text-success">36</div>
+            <div className="text-3xl md:text-4xl font-bold text-success">36</div>
             <div className="text-muted-foreground">Months Lock-In Period</div>
           </div>
           <div className="text-center space-y-2">
-            <div className="text-4xl font-bold text-primary">3</div>
+            <div className="text-3xl md:text-4xl font-bold text-primary">3</div>
             <div className="text-muted-foreground">Global Markets</div>
           </div>
         </div>

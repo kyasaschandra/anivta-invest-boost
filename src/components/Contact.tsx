@@ -48,14 +48,14 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">
             Accredited Investor Opportunities
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             Explore secured, fixed-income real estate debt opportunities with Anvita Capital Fund LLC. 
             Contact our team to learn about our asset-backed investment structure.
           </p>

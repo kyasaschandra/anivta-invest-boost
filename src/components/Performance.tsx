@@ -35,14 +35,14 @@ const Performance = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">
             Fund Structure & Benefits
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             Our structured approach ensures predictable returns through rigorous due diligence, milestone-based funding, and strong asset security.
           </p>
         </div>
@@ -58,7 +58,7 @@ const Performance = () => {
                 <img 
                   src={performanceChart} 
                   alt="Performance Chart" 
-                  className="w-full h-64 object-cover"
+                  className="w-full h-56 md:h-64 object-cover"
                 />
               </CardContent>
             </Card>
@@ -94,24 +94,24 @@ const Performance = () => {
         </div>
 
         {/* Key Highlights */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="text-center p-8 bg-gradient-card border-0 shadow-card">
+        <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <Card className="text-center p-6 md:p-8 bg-gradient-card border-0 shadow-card">
             <CardContent className="space-y-4">
-              <div className="text-3xl font-bold text-success">LEED/IGBC</div>
+              <div className="text-2xl md:text-3xl font-bold text-success">LEED/IGBC</div>
               <div className="text-muted-foreground">Sustainability Focus</div>
             </CardContent>
           </Card>
           
-          <Card className="text-center p-8 bg-gradient-card border-0 shadow-card">
+          <Card className="text-center p-6 md:p-8 bg-gradient-card border-0 shadow-card">
             <CardContent className="space-y-4">
-              <div className="text-3xl font-bold text-primary">Anvita Group</div>
+              <div className="text-2xl md:text-3xl font-bold text-primary">Anvita Group</div>
               <div className="text-muted-foreground">Proven Sponsor</div>
             </CardContent>
           </Card>
           
-          <Card className="text-center p-8 bg-gradient-card border-0 shadow-card">
+          <Card className="text-center p-6 md:p-8 bg-gradient-card border-0 shadow-card">
             <CardContent className="space-y-4">
-              <div className="text-3xl font-bold text-accent">Milestone</div>
+              <div className="text-2xl md:text-3xl font-bold text-accent">Milestone</div>
               <div className="text-muted-foreground">Based Funding</div>
             </CardContent>
           </Card>

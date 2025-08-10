@@ -18,11 +18,11 @@ const FundStructure = () => {
   ];
 
   return (
-    <section id="fund-structure" className="py-24 bg-gradient-subtle">
+    <section id="fund-structure" className="py-16 md:py-24 bg-gradient-subtle">
       <div className="max-w-7xl mx-auto px-6">
         {/* Fund Structure */}
         <div className="text-center space-y-4 mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary">Fund Structure</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">Fund Structure</h2>
         </div>
         <Card className="mb-16 border-0 bg-white/50 backdrop-blur-sm shadow-elegant">
           <CardHeader>
@@ -47,9 +47,9 @@ const FundStructure = () => {
 
         {/* Investment Options */}
         <div id="investment-options" className="text-center space-y-4 mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary">Investment Options</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">Investment Options</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {series.map((s, i) => (
             <Card key={i} className="group hover:shadow-elegant transition-all duration-300 border-0 bg-white/50 backdrop-blur-sm">
               <CardHeader>
