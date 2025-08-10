@@ -19,7 +19,7 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
             <TrendingUp className="w-4 h-4 mr-2 text-accent" />
-            <span className="text-sm font-medium">Delivering exceptional returns since 2020</span>
+            <span className="text-sm font-medium">🏆 20+ Years of Real Estate Excellence – Now Powering a Global Debt Fund</span>
           </div>
           
           {/* Main Heading */}
@@ -29,7 +29,7 @@ const Hero = () => {
               <span className="block text-accent">Fund LLC</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              A secured, fixed-income real estate debt fund providing asset-backed investment opportunities with predictable returns for accredited investors.
+              With two decades of proven success in delivering high-quality residential and commercial developments, Anvita Group is channeling its expertise into Anvita Capital Fund LLC — offering secured, fixed-income investment opportunities backed by real assets worldwide.
             </p>
           </div>
           
