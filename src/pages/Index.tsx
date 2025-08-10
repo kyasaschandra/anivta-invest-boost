@@ -7,6 +7,7 @@ import InvestmentObjectives from "@/components/InvestmentObjectives";
 import FundStructure from "@/components/FundStructure";
 import Team from "@/components/Team";
 import Contact from "@/components/Contact";
+import FundDocuments from "@/components/FundDocuments";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -21,6 +22,7 @@ const Index = () => {
       <TargetMarkets />
       <Team />
       <Contact />
+      <FundDocuments />
       <Footer />
     </div>
   );
