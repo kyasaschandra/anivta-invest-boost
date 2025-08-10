@@ -44,7 +44,7 @@ const ProjectsPage = () => {
             </p>
           </header>
 
-          <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8" aria-label="Projects list">
+          <section className="grid grid-cols-1 gap-6 md:gap-8" aria-label="Projects list">
             {projects.map((project) => (
               <article key={project.slug} className="h-full" itemScope itemType="https://schema.org/CreativeWork">
                 <Link to={`/projects/${project.slug}`} aria-label={`View ${project.title} details`}>
