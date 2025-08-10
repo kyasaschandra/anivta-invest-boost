@@ -6,7 +6,7 @@ import teamMember2 from "@/assets/team-member-2.jpg";
 const Team = () => {
   const teamMembers = [
     {
-      name: "Michael Chen",
+      name: "Atchuta Rao Boppana",
       role: "Managing Partner & CEO",
       image: teamMember1,
       bio: "20+ years in investment banking and private equity. Former Goldman Sachs VP with expertise in growth-stage investments.",
@@ -14,7 +14,7 @@ const Team = () => {
       twitter: "#"
     },
     {
-      name: "Sarah Williams",
+      name: "Sarita Kakarla",
       role: "Chief Investment Officer",
       image: teamMember2,
       bio: "Former BlackRock portfolio manager with deep expertise in ESG investing and risk management across global markets.",
