@@ -28,17 +28,16 @@ const Navigation = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <TrendingUp className="w-5 h-5 text-white" />
-            </div>
-            <span className={`text-xl font-bold transition-colors ${
-              isScrolled ? "text-primary" : "text-white"
-            }`}>
-              Anivta Capital
-            </span>
-          </div>
+          <a href="/" className="flex items-center space-x-3" aria-label="Anvita Capital home">
+            <img
+              src="/lovable-uploads/89343412-3f23-4f7b-a630-9fac8175f2a0.png"
+              alt="Anvita Capital logo — Building Happiness"
+              width="120"
+              height="40"
+              className="h-10 w-auto object-contain"
+              loading="eager"
+            />
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
