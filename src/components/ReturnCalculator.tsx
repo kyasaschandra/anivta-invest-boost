@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
 import {
   Select,
   SelectContent,
@@ -27,6 +28,7 @@ const seriesMap = {
 type SeriesKey = keyof typeof seriesMap;
 
 const MIN_INVESTMENT = 100_000;
+const MAX_INVESTMENT = 25_000_000;
 
 const ReturnCalculator = () => {
   const { toast } = useToast();
@@ -66,19 +68,27 @@ const ReturnCalculator = () => {
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="space-y-2">
+            <div className="space-y-4">
               <Label htmlFor="investment-amount">Amount (USD)</Label>
-              <Input
-                id="investment-amount"
-                type="number"
-                min={MIN_INVESTMENT}
-                step={1000}
-                value={amount}
-                onChange={(e) => setAmount(Number(e.target.value))}
-                aria-describedby="amount-help"
-              />
+              <div className="space-y-3">
+                <Slider
+                  id="investment-amount"
+                  min={MIN_INVESTMENT}
+                  max={MAX_INVESTMENT}
+                  step={50_000}
+                  value={[amount]}
+                  onValueChange={(value) => setAmount(value[0])}
+                  className="w-full"
+                  aria-describedby="amount-help"
+                />
+                <div className="flex justify-between text-xs text-muted-foreground">
+                  <span>{formatter.format(MIN_INVESTMENT)}</span>
+                  <span className="font-medium text-primary text-base">{formatter.format(amount)}</span>
+                  <span>{formatter.format(MAX_INVESTMENT)}</span>
+                </div>
+              </div>
               <p id="amount-help" className="text-xs text-muted-foreground">
-                Minimum investment: $100,000
+                Drag to select investment amount ($100K - $25M)
               </p>
             </div>
 
