@@ -73,7 +73,7 @@ const AboutPage = () => {
               <Button asChild size="lg" variant="hero" className="group">
                 <a href="/contact">Contact Investor Relations</a>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 backdrop-blur-sm" asChild>
+              <Button size="lg" className="border border-white/30 bg-transparent text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300" asChild>
                 <a href="https://www.anvitagroup.com/" rel="noopener noreferrer" target="_blank">Visit Anvita Group</a>
               </Button>
             </div>
