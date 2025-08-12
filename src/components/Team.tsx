@@ -1,14 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Linkedin, Twitter } from "lucide-react";
-import teamMember1 from "@/assets/team-member-1.jpg";
-import teamMember2 from "@/assets/team-member-2.jpg";
+import { Linkedin, Twitter, User } from "lucide-react";
 
 const Team = () => {
   const teamMembers = [
     {
       name: "Rao Boppana",
       role: "Manager & Strategic Lead",
-      image: teamMember1,
+      initials: "RB",
       bio: "With a proven track record in global real estate development and investment, Rao Boppana provides strategic direction for Anvita Capital Fund LLC, ensuring every project meets the highest standards of quality, security, and investor value.",
       linkedin: "#",
       twitter: "#"
@@ -16,7 +14,7 @@ const Team = () => {
     {
       name: "Sarita Kakarla",
       role: "Manager & Operations Lead",
-      image: teamMember2,
+      initials: "SK",
       bio: "Overseeing U.S. operations, banking, and administration, Sarita Kakarla ensures the fund's day-to-day activities run seamlessly, enabling timely execution, transparent reporting, and efficient investor communications.",
       linkedin: "#",
       twitter: "#"
@@ -41,12 +39,11 @@ const Team = () => {
           {teamMembers.map((member, index) => (
             <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2">
               <CardContent className="p-8 text-center space-y-6">
-                <div className="relative mx-auto w-32 h-32 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                  <img 
-                    src={member.image} 
-                    alt={`${member.name} - ${member.role} at Anvita Capital Fund LLC`}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative mx-auto w-32 h-32 rounded-full bg-primary/10 border-2 border-primary/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <div className="text-center">
+                    <User className="w-8 h-8 text-primary/60 mb-1 mx-auto" />
+                    <span className="text-sm font-medium text-primary/80">{member.initials}</span>
+                  </div>
                 </div>
                 
                 <div className="space-y-2">
