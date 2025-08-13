@@ -36,16 +36,17 @@ const Index = () => {
   return (
     <div className="min-h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth">
       <Navigation />
-      <Hero />
-      <About />
-      <FundStructure />
-      
-      <InvestmentObjectives />
-      <TargetMarkets />
-      <Team />
-      <Contact />
-      <FundDocuments />
-      <Footer />
+      <div id="pdf-content">
+        <Hero />
+        <About />
+        <FundStructure />
+        <InvestmentObjectives />
+        <TargetMarkets />
+        <Team />
+        <Contact />
+        <FundDocuments />
+        <Footer />
+      </div>
     </div>
   );
 };

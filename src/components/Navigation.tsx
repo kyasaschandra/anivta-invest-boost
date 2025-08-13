@@ -1,10 +1,19 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
+import { usePDF } from "react-to-pdf";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  const { toPDF, targetRef } = usePDF({
+    filename: 'anvita-capital-fund.pdf',
+    page: {
+      margin: 20,
+      format: 'a4'
+    }
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,6 +69,15 @@ const Navigation = () => {
             >
               Get Started
             </Button>
+            <Button 
+              size="sm" 
+              variant="outline" 
+              onClick={() => toPDF()}
+              className={isScrolled ? "border-primary/20 text-primary hover:bg-primary/10" : "border-white/20 text-white hover:bg-white/10"}
+            >
+              <Download className="w-4 h-4 mr-2" />
+              PDF
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -87,8 +105,17 @@ const Navigation = () => {
                   {item.label}
                 </a>
               ))}
-              <Button size="sm" className="w-full">
+              <Button size="sm" className="w-full mb-2">
                 Get Started
+              </Button>
+              <Button 
+                size="sm" 
+                variant="outline" 
+                onClick={() => toPDF()}
+                className="w-full"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download PDF
               </Button>
             </div>
           </div>
