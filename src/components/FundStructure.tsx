@@ -9,7 +9,7 @@ const FundStructure = () => {
     { icon: FileText, label: "Instrument", value: "Promissory Notes with fixed ROI" },
     { icon: ShieldCheck, label: "Investor Eligibility", value: "Accredited investors only (per SEC guidelines)" },
     { icon: DollarSign, label: "Minimum Investment", value: "USD 100,000" },
-    { icon: Clock, label: "Lock-In Period", value: "36 months" },
+    { icon: Clock, label: "Minimum Tenure", value: "36 months — Liquidity with Balance: Withdraw anytime with 90 days' notice, while long-term investors enjoy full value beyond 36 months" },
   ];
 
   const series = [
@@ -20,7 +20,7 @@ const FundStructure = () => {
       payout: "Payouts: Every 3 months",
       tenor: "Minimum Tenure: 36 months",
       description:
-        "Ideal for investors seeking a steady, frequent cash flow while maintaining capital security.",
+        "Ideal for investors seeking a steady, frequent cash flow while maintaining capital security. Liquidity with Balance – Withdraw anytime with 90 days' notice, while long-term investors enjoy full value beyond 36 months.",
     },
     {
       name: "Series 2",
@@ -29,7 +29,7 @@ const FundStructure = () => {
       payout: "Payouts: Every 6 months",
       tenor: "Minimum Tenure: 36 months",
       description:
-        "Balances higher yield with moderate payout frequency for those preferring fewer disbursements.",
+        "Balances higher yield with moderate payout frequency for those preferring fewer disbursements. Liquidity with Balance – Withdraw anytime with 90 days' notice, while long-term investors enjoy full value beyond 36 months.",
     },
     {
       name: "Series 3",
@@ -38,7 +38,7 @@ const FundStructure = () => {
       payout: "Payouts: Once per year",
       tenor: "Minimum Tenure: 36 months",
       description:
-        "Designed for investors comfortable with annual disbursements, maximizing yield over the investment term.",
+        "Designed for investors comfortable with annual disbursements, maximizing yield over the investment term. Liquidity with Balance – Withdraw anytime with 90 days' notice, while long-term investors enjoy full value beyond 36 months.",
     },
   ];
 
