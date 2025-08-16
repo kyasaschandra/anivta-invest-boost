@@ -18,7 +18,7 @@ const FundStructure = () => {
       subtitle: "Quarterly Income",
       roi: "Target ROI: 11% p.a.",
       payout: "Payouts: Every 3 months",
-      tenor: "Minimum Tenure: 36 months",
+      tenor: "Your Capital, Your Choice – Flexible 90-day redemption. Early exits within 36 months carry a nominal 5% adjustment to safeguard fund stability.",
       description:
         "Ideal for investors seeking a steady, frequent cash flow while maintaining capital security. Liquidity with Balance – Withdraw anytime with 90 days' notice, while long-term investors enjoy full value beyond 36 months.",
     },
@@ -27,7 +27,7 @@ const FundStructure = () => {
       subtitle: "Semi-Annual Income",
       roi: "Target ROI: 11.50% p.a.",
       payout: "Payouts: Every 6 months",
-      tenor: "Minimum Tenure: 36 months",
+      tenor: "Your Capital, Your Choice – Flexible 90-day redemption. Early exits within 36 months carry a nominal 5% adjustment to safeguard fund stability.",
       description:
         "Balances higher yield with moderate payout frequency for those preferring fewer disbursements. Liquidity with Balance – Withdraw anytime with 90 days' notice, while long-term investors enjoy full value beyond 36 months.",
     },
@@ -36,7 +36,7 @@ const FundStructure = () => {
       subtitle: "Annual Income",
       roi: "Target ROI: 12% p.a.",
       payout: "Payouts: Once per year",
-      tenor: "Minimum Tenure: 36 months",
+      tenor: "Your Capital, Your Choice – Flexible 90-day redemption. Early exits within 36 months carry a nominal 5% adjustment to safeguard fund stability.",
       description:
         "Designed for investors comfortable with annual disbursements, maximizing yield over the investment term. Liquidity with Balance – Withdraw anytime with 90 days' notice, while long-term investors enjoy full value beyond 36 months.",
     },
