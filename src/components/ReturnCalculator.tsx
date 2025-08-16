@@ -11,7 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Percent, CalendarDays, DollarSign } from "lucide-react";
+import { Percent, CalendarDays, DollarSign, Clock, AlertTriangle } from "lucide-react";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -34,6 +34,8 @@ const ReturnCalculator = () => {
   const { toast } = useToast();
   const [amount, setAmount] = useState<number>(MIN_INVESTMENT);
   const [series, setSeries] = useState<SeriesKey>("s1");
+  const [timePeriod, setTimePeriod] = useState<"months" | "years">("years");
+  const [duration, setDuration] = useState<number>(3);
 
   useEffect(() => {
     if (amount < MIN_INVESTMENT) {
@@ -45,18 +47,36 @@ const ReturnCalculator = () => {
     }
   }, [amount, toast]);
 
-  const { payoutPerPeriod, annualReturn, totalReturn, frequency, ratePct } = useMemo(() => {
+  const { 
+    payoutPerPeriod, 
+    annualReturn, 
+    totalReturn, 
+    adjustedTotalReturn,
+    frequency, 
+    ratePct, 
+    durationInMonths,
+    hasEarlyExitAdjustment 
+  } = useMemo(() => {
     const cfg = seriesMap[series];
     const rate = cfg.rate;
     const payout = (amount * rate) / cfg.periods;
+    const months = timePeriod === "years" ? duration * 12 : duration;
+    const years = months / 12;
+    const totalEarnings = amount * rate * years;
+    const earlyExitAdjustment = months < 36 ? 0.05 : 0;
+    const adjustedEarnings = totalEarnings * (1 - earlyExitAdjustment);
+    
     return {
       payoutPerPeriod: payout,
       annualReturn: amount * rate,
-      totalReturn: amount * rate * 3, // 36 months tenure
+      totalReturn: totalEarnings,
+      adjustedTotalReturn: adjustedEarnings,
       frequency: cfg.frequency,
       ratePct: `${(rate * 100).toFixed(2)}% p.a.`,
+      durationInMonths: months,
+      hasEarlyExitAdjustment: months < 36,
     };
-  }, [amount, series]);
+  }, [amount, series, timePeriod, duration]);
 
   return (
     <section aria-labelledby="return-calculator-heading" className="mt-8">
@@ -67,7 +87,7 @@ const ReturnCalculator = () => {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="space-y-4">
               <Label htmlFor="investment-amount">Amount (USD)</Label>
               <div className="space-y-3">
@@ -106,40 +126,83 @@ const ReturnCalculator = () => {
               </Select>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 md:gap-4 content-start mt-4 md:mt-0">
-              <div className="flex items-center gap-2 rounded-lg border border-border px-3 py-2">
+            <div className="space-y-2">
+              <Label>Investment Period</Label>
+              <div className="flex gap-2">
+                <Input
+                  type="number"
+                  value={duration}
+                  onChange={(e) => setDuration(Number(e.target.value))}
+                  min={1}
+                  max={timePeriod === "years" ? 10 : 120}
+                  className="flex-1"
+                />
+                <Select value={timePeriod} onValueChange={(v) => setTimePeriod(v as "months" | "years")}>
+                  <SelectTrigger className="w-24">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="months">Months</SelectItem>
+                    <SelectItem value="years">Years</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3 md:gap-2 content-start mt-4 md:mt-0">
+              <div className="flex items-center gap-2 rounded-lg border border-border px-2 py-2">
                 <Percent className="w-4 h-4 text-primary" />
                 <div className="text-sm">
-                  <div className="text-muted-foreground">Target ROI</div>
-                  <div className="font-medium">{ratePct}</div>
+                  <div className="text-muted-foreground text-xs">Target ROI</div>
+                  <div className="font-medium text-xs">{ratePct}</div>
                 </div>
               </div>
-              <div className="flex items-center gap-2 rounded-lg border border-border px-3 py-2">
+              <div className="flex items-center gap-2 rounded-lg border border-border px-2 py-2">
                 <CalendarDays className="w-4 h-4 text-primary" />
                 <div className="text-sm">
-                  <div className="text-muted-foreground">Frequency</div>
-                  <div className="font-medium">{frequency}</div>
+                  <div className="text-muted-foreground text-xs">Frequency</div>
+                  <div className="font-medium text-xs">{frequency}</div>
                 </div>
               </div>
-              <div className="flex items-center gap-2 rounded-lg border border-border px-3 py-2">
+              <div className="flex items-center gap-2 rounded-lg border border-border px-2 py-2">
                 <DollarSign className="w-4 h-4 text-primary" />
                 <div className="text-sm">
-                  <div className="text-muted-foreground">Per Payout</div>
-                  <div className="font-medium">{formatter.format(payoutPerPeriod)}</div>
+                  <div className="text-muted-foreground text-xs">Per Payout</div>
+                  <div className="font-medium text-xs">{formatter.format(payoutPerPeriod)}</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {hasEarlyExitAdjustment && (
+            <div className="flex items-center gap-3 p-4 rounded-lg bg-orange-50 border border-orange-200">
+              <AlertTriangle className="w-5 h-5 text-orange-600" />
+              <div className="text-sm text-orange-800">
+                <div className="font-medium">Early Exit Adjustment</div>
+                <div>Withdrawals within 36 months carry a 5% adjustment to safeguard fund stability.</div>
+              </div>
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
             <div className="text-center rounded-lg bg-card p-4 border border-border">
               <div className="text-xs text-muted-foreground">Estimated Annual Return</div>
               <div className="text-2xl font-semibold text-primary">{formatter.format(annualReturn)}</div>
             </div>
             <div className="text-center rounded-lg bg-card p-4 border border-border">
-              <div className="text-xs text-muted-foreground">Estimated Total Return (36 mo)</div>
+              <div className="text-xs text-muted-foreground">
+                Estimated Total Return ({durationInMonths} mo)
+              </div>
               <div className="text-2xl font-semibold text-primary">{formatter.format(totalReturn)}</div>
             </div>
+            {hasEarlyExitAdjustment && (
+              <div className="text-center rounded-lg bg-orange-50 p-4 border border-orange-200">
+                <div className="text-xs text-orange-800">
+                  After 5% Early Exit Adjustment
+                </div>
+                <div className="text-2xl font-semibold text-orange-700">{formatter.format(adjustedTotalReturn)}</div>
+              </div>
+            )}
             <div className="text-center rounded-lg bg-card p-4 border border-border">
               <div className="text-xs text-muted-foreground">Principal</div>
               <div className="text-2xl font-semibold text-primary">{formatter.format(amount)}</div>
