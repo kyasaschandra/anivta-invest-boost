@@ -31,39 +31,43 @@ const Team = () => {
           {teamMembers.map((member, index) => (
             <Card key={index} className="group hover:shadow-elegant transition-all duration-300">
               <CardContent className="p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                  {/* Picture Section */}
-                  <div className="lg:col-span-1">
-                    <div className="relative w-full aspect-[4/5] rounded-lg bg-primary/10 border-2 border-primary/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                      <div className="text-center">
-                        <User className="w-16 h-16 text-primary/60 mb-2 mx-auto" />
-                        <span className="text-lg font-medium text-primary/80">{member.initials}</span>
+                <div className="space-y-8">
+                  {/* Picture and Header Section */}
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    {/* Picture Section */}
+                    <div className="lg:col-span-1">
+                      <div className="relative w-full aspect-[4/5] rounded-lg bg-primary/10 border-2 border-primary/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                        <div className="text-center">
+                          <User className="w-16 h-16 text-primary/60 mb-2 mx-auto" />
+                          <span className="text-lg font-medium text-primary/80">{member.initials}</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex justify-center space-x-4 pt-6">
+                        <a 
+                          href={member.linkedin}
+                          className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300"
+                        >
+                          <Linkedin className="w-6 h-6" />
+                        </a>
+                        <a 
+                          href={member.twitter}
+                          className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300"
+                        >
+                          <Twitter className="w-6 h-6" />
+                        </a>
                       </div>
                     </div>
                     
-                    <div className="flex justify-center space-x-4 pt-6">
-                      <a 
-                        href={member.linkedin}
-                        className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300"
-                      >
-                        <Linkedin className="w-6 h-6" />
-                      </a>
-                      <a 
-                        href={member.twitter}
-                        className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300"
-                      >
-                        <Twitter className="w-6 h-6" />
-                      </a>
-                    </div>
-                  </div>
-                  
-                  {/* Content Section */}
-                  <div className="lg:col-span-2 space-y-6">
-                    <div className="space-y-3">
+                    {/* Header Section */}
+                    <div className="lg:col-span-2 space-y-3 flex flex-col justify-center">
                       <h3 className="text-3xl font-bold text-primary">{member.name}</h3>
                       <p className="text-xl text-accent font-medium">{member.role}</p>
                     </div>
-                    
+                  </div>
+                  
+                  {/* Content Section - Full Width */}
+                  <div className="w-full">
                     <div className="space-y-4 text-muted-foreground leading-relaxed text-justify">
                       <p>
                         With over <span className="font-semibold text-primary">two decades of real estate leadership</span>, <span className="font-semibold text-primary">Atchuta Rao Boppana</span> has successfully delivered residential, commercial, and mixed-use projects across <span className="font-semibold text-primary">India and the UAE</span>. As a founding force behind <span className="font-semibold text-primary">Anvita Group</span>, he has built a reputation for executing large-scale developments that combine <span className="font-semibold text-primary">modern design, sustainability, and strong financial performance</span>. His leadership is defined by a deep understanding of market dynamics, meticulous project execution, and a commitment to <span className="font-semibold text-primary">transparency and investor trust</span>.
