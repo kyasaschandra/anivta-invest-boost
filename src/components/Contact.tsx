@@ -135,29 +135,6 @@ const Contact = () => {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">Contact Information</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-primary text-white flex-shrink-0">
-                      <info.icon className="w-5 h-5" />
-                    </div>
-                    <div className="space-y-1">
-                      <div className="font-medium text-primary">{info.label}</div>
-                      <a 
-                        href={info.href}
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        {info.value}
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
 
             {/* Investment Minimums */}
             <Card className="shadow-card bg-gradient-card border-0">
