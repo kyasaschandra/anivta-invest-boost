@@ -64,7 +64,7 @@ const Team = () => {
                       <p className="text-xl text-accent font-medium">{member.role}</p>
                     </div>
                     
-                    <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <div className="space-y-4 text-muted-foreground leading-relaxed text-justify">
                       <p>
                         With over two decades of real estate leadership, Atchuta Rao Boppana has successfully delivered residential, commercial, and mixed-use projects across India and the UAE. As a founding force behind Anvita Group, he has built a reputation for executing large-scale developments that combine modern design, sustainability, and strong financial performance. His leadership is defined by a deep understanding of market dynamics, meticulous project execution, and a commitment to transparency and investor trust.
                       </p>
