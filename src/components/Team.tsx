@@ -34,7 +34,7 @@ const Team = () => {
                 <div className="space-y-8">
                   {/* Picture Section */}
                   <div className="flex flex-col lg:flex-row lg:items-start gap-8">
-                    <div className="lg:w-80 lg:flex-shrink-0">
+                    <div className="lg:w-80 lg:flex-shrink-0 mx-auto lg:mx-0">
                       <div className="relative w-full aspect-[4/5] rounded-lg bg-primary/10 border-2 border-primary/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                         <div className="text-center">
                           <User className="w-16 h-16 text-primary/60 mb-2 mx-auto" />
@@ -59,7 +59,7 @@ const Team = () => {
                     </div>
                     
                     {/* Header Section */}
-                    <div className="lg:flex-1 space-y-3">
+                    <div className="lg:flex-1 space-y-3 text-center lg:text-left">
                       <h3 className="text-3xl font-bold text-primary">{member.name}</h3>
                       <p className="text-xl text-accent font-medium">{member.role}</p>
                     </div>
