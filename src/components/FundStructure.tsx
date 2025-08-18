@@ -18,7 +18,7 @@ const FundStructure = () => {
       subtitle: "Quarterly Income",
       roi: "Target ROI: 11% p.a.",
       payout: "Payouts: Every 3 months",
-      tenor: "Your Capital, Your Choice – Flexible 90-day redemption. Early exits within 36 months carry a nominal 5% adjustment to safeguard fund stability.",
+      tenor: "Minimum 36 months investment period.",
       description:
         "Ideal for investors seeking a steady, frequent cash flow while maintaining capital security.",
     },
@@ -27,7 +27,7 @@ const FundStructure = () => {
       subtitle: "Semi-Annual Income",
       roi: "Target ROI: 11.50% p.a.",
       payout: "Payouts: Every 6 months",
-      tenor: "Your Capital, Your Choice – Flexible 90-day redemption. Early exits within 36 months carry a nominal 5% adjustment to safeguard fund stability.",
+      tenor: "Minimum 36 months investment period.",
       description:
         "Balances higher yield with moderate payout frequency for those preferring fewer disbursements.",
     },
@@ -36,7 +36,7 @@ const FundStructure = () => {
       subtitle: "Annual Income",
       roi: "Target ROI: 12% p.a.",
       payout: "Payouts: Once per year",
-      tenor: "Your Capital, Your Choice – Flexible 90-day redemption. Early exits within 36 months carry a nominal 5% adjustment to safeguard fund stability.",
+      tenor: "Minimum 36 months investment period.",
       description:
         "Designed for investors comfortable with annual disbursements, maximizing yield over the investment term.",
     },
