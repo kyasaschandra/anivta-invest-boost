@@ -59,12 +59,14 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <Button 
-              size="sm" 
-              className={isScrolled ? "" : "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white hover:text-primary"}
-            >
-              Get Started
-            </Button>
+            <a href="#investment-inquiry" className="no-underline">
+              <Button 
+                size="sm" 
+                className={isScrolled ? "" : "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white hover:text-primary"}
+              >
+                Get Started
+              </Button>
+            </a>
             <Button 
               size="sm" 
               variant="outline" 
@@ -101,9 +103,11 @@ const Navigation = () => {
                   {item.label}
                 </a>
               ))}
-              <Button size="sm" className="w-full mb-2">
-                Get Started
-              </Button>
+              <a href="#investment-inquiry" className="no-underline">
+                <Button size="sm" className="w-full mb-2">
+                  Get Started
+                </Button>
+              </a>
               <Button 
                 size="sm" 
                 variant="outline" 

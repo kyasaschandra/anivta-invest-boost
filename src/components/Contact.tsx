@@ -27,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="snap-start py-10 md:py-16 bg-background">
+    <section id="investment-inquiry" className="snap-start py-10 md:py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-10">
