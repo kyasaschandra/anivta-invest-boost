@@ -26,40 +26,70 @@ const Team = () => {
           </p>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+        {/* Team Profile */}
+        <div className="max-w-6xl mx-auto">
           {teamMembers.map((member, index) => (
-            <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-8 text-center space-y-6">
-                <div className="relative mx-auto w-32 h-32 rounded-full bg-primary/10 border-2 border-primary/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                  <div className="text-center">
-                    <User className="w-8 h-8 text-primary/60 mb-1 mx-auto" />
-                    <span className="text-sm font-medium text-primary/80">{member.initials}</span>
+            <Card key={index} className="group hover:shadow-elegant transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  {/* Picture Section */}
+                  <div className="lg:col-span-1">
+                    <div className="relative w-full aspect-[4/5] rounded-lg bg-primary/10 border-2 border-primary/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                      <div className="text-center">
+                        <User className="w-16 h-16 text-primary/60 mb-2 mx-auto" />
+                        <span className="text-lg font-medium text-primary/80">{member.initials}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="flex justify-center space-x-4 pt-6">
+                      <a 
+                        href={member.linkedin}
+                        className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300"
+                      >
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                      <a 
+                        href={member.twitter}
+                        className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300"
+                      >
+                        <Twitter className="w-6 h-6" />
+                      </a>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-primary">{member.name}</h3>
-                  <p className="text-accent font-medium">{member.role}</p>
-                </div>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  {member.bio}
-                </p>
-                
-                <div className="flex justify-center space-x-4 pt-4">
-                  <a 
-                    href={member.linkedin}
-                    className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href={member.twitter}
-                    className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300"
-                  >
-                    <Twitter className="w-5 h-5" />
-                  </a>
+                  
+                  {/* Content Section */}
+                  <div className="lg:col-span-2 space-y-6">
+                    <div className="space-y-3">
+                      <h3 className="text-3xl font-bold text-primary">{member.name}</h3>
+                      <p className="text-xl text-accent font-medium">{member.role}</p>
+                    </div>
+                    
+                    <div className="space-y-4 text-muted-foreground leading-relaxed">
+                      <p>
+                        With over two decades of real estate leadership, Atchuta Rao Boppana has successfully delivered residential, commercial, and mixed-use projects across India and the UAE. As a founding force behind Anvita Group, he has built a reputation for executing large-scale developments that combine modern design, sustainability, and strong financial performance. His leadership is defined by a deep understanding of market dynamics, meticulous project execution, and a commitment to transparency and investor trust.
+                      </p>
+                      
+                      <p>
+                        Under his leadership, Anvita Group is currently developing a diverse portfolio of projects in Hyderabad, India, including Anvita Ivana (a premium high-rise gated community), Anvita High9 (an iconic nine-tower sky bridge project), Anvita Parkside (exclusive villa residences), Anvita Commercial (modern office and retail spaces), and Anvita Amari (a mixed-use lifestyle development). These ongoing projects reflect the Group's commitment to innovation, quality, and sustainable community living.
+                      </p>
+                      
+                      <p>
+                        Now venturing into the United States real estate market, Rao is spearheading Anvita Homes' expansion into Texas, one of the nation's fastest-growing real estate hubs. Under his leadership, Anvita Homes is launching residential communities and commercial mixed-use developments in strategic growth corridors to meet the region's surging demand.
+                      </p>
+                      
+                      <p>
+                        Rao's vision for construction is firmly rooted in sustainability and green architecture, integrating eco-friendly practices, energy efficiency, and responsible material use. He is equally committed to delivering higher and luxury amenities, strict safety protocols, and setting new benchmarks in construction standards. To achieve this, he consistently engages with renowned architects, industry consultants, and global project management teams, ensuring that every Anvita project combines innovation, functionality, and long-term value.
+                      </p>
+                      
+                      <p>
+                        In parallel, Rao has launched Anvita Capital Fund, a private real estate debt platform designed to give investors secure, asset-backed opportunities with predictable fixed returns, no FX risk, and flexible 90-day liquidity. His vision for the Fund is to bridge global capital with high-quality real estate projects, creating a secure, scalable, and sustainable investment vehicle that delivers both financial returns and lasting community impact.
+                      </p>
+                      
+                      <p>
+                        Through this dual strategy of developing landmark projects under Anvita Homes and financing them via Anvita Capital Fund, Rao is extending his proven expertise to the global investment community, aligning institutional-grade discipline with entrepreneurial agility.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
