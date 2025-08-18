@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Download } from "lucide-react";
 import { usePDF } from "react-to-pdf";
-import anvitagroupLogo from "@/assets/anvita-group-logo.jpg";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,12 +35,12 @@ const Navigation = () => {
         : "bg-transparent"
     }`}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16 md:h-20 overflow-hidden">
+        <div className="flex items-center justify-between h-18 md:h-22 lg:h-24 overflow-hidden">
           <a href="/" className="flex items-center space-x-2" aria-label="Anvita Capital home">
             <img
-              src={anvitagroupLogo}
-              alt="Anvita Group logo"
-              className="h-12 w-auto md:h-16 md:w-auto object-contain shrink-0"
+              src="/lovable-uploads/79b9e21b-dd63-416b-9655-b28cb1cd19c4.png"
+              alt="Anvita logo"
+              className="h-14 w-auto md:h-18 lg:h-20 object-contain shrink-0 drop-shadow-lg"
               loading="eager"
               decoding="sync"
             />
