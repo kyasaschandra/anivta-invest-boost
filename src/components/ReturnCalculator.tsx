@@ -63,8 +63,8 @@ const ReturnCalculator = () => {
     const months = timePeriod === "years" ? duration * 12 : duration;
     const years = months / 12;
     const totalEarnings = amount * rate * years;
-    const earlyExitAdjustment = months < 36 ? 0.05 : 0;
-    const adjustedEarnings = totalEarnings * (1 - earlyExitAdjustment);
+    const earlyExitPenalty = months < 36 ? amount * 0.05 : 0;
+    const adjustedEarnings = totalEarnings - earlyExitPenalty;
     
     return {
       payoutPerPeriod: payout,
