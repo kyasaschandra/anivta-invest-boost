@@ -9,7 +9,7 @@ const FundStructure = () => {
     { icon: FileText, label: "Instrument", value: "Promissory Notes with fixed ROI" },
     { icon: ShieldCheck, label: "Investor Eligibility", value: "Accredited investors only (per SEC guidelines)" },
     { icon: DollarSign, label: "Minimum Investment", value: "USD 100,000" },
-    { icon: Clock, label: "Minimum Tenure", value: "36 months — Liquidity with Balance: Withdraw anytime with 90 days' notice, while long-term investors enjoy full value beyond 36 months" },
+    { icon: Clock, label: "Minimum Tenure", value: "36 months" },
   ];
 
   const series = [
@@ -20,7 +20,7 @@ const FundStructure = () => {
       payout: "Payouts: Every 3 months",
       tenor: "Your Capital, Your Choice – Flexible 90-day redemption. Early exits within 36 months carry a nominal 5% adjustment to safeguard fund stability.",
       description:
-        "Ideal for investors seeking a steady, frequent cash flow while maintaining capital security. Liquidity with Balance – Withdraw anytime with 90 days' notice, while long-term investors enjoy full value beyond 36 months.",
+        "Ideal for investors seeking a steady, frequent cash flow while maintaining capital security.",
     },
     {
       name: "Series 2",
@@ -29,7 +29,7 @@ const FundStructure = () => {
       payout: "Payouts: Every 6 months",
       tenor: "Your Capital, Your Choice – Flexible 90-day redemption. Early exits within 36 months carry a nominal 5% adjustment to safeguard fund stability.",
       description:
-        "Balances higher yield with moderate payout frequency for those preferring fewer disbursements. Liquidity with Balance – Withdraw anytime with 90 days' notice, while long-term investors enjoy full value beyond 36 months.",
+        "Balances higher yield with moderate payout frequency for those preferring fewer disbursements.",
     },
     {
       name: "Series 3",
@@ -38,7 +38,7 @@ const FundStructure = () => {
       payout: "Payouts: Once per year",
       tenor: "Your Capital, Your Choice – Flexible 90-day redemption. Early exits within 36 months carry a nominal 5% adjustment to safeguard fund stability.",
       description:
-        "Designed for investors comfortable with annual disbursements, maximizing yield over the investment term. Liquidity with Balance – Withdraw anytime with 90 days' notice, while long-term investors enjoy full value beyond 36 months.",
+        "Designed for investors comfortable with annual disbursements, maximizing yield over the investment term.",
     },
   ];
 
