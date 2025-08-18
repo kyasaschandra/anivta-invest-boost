@@ -10,14 +10,6 @@ const Team = () => {
       bio: "With a proven track record in global real estate development and investment, Rao Boppana provides strategic direction for Anvita Capital Fund LLC, ensuring every project meets the highest standards of quality, security, and investor value.",
       linkedin: "#",
       twitter: "#"
-    },
-    {
-      name: "Sarita Kakarla",
-      role: "Manager & Operations Lead",
-      initials: "SK",
-      bio: "Overseeing U.S. operations, banking, and administration, Sarita Kakarla ensures the fund's day-to-day activities run seamlessly, enabling timely execution, transparent reporting, and efficient investor communications.",
-      linkedin: "#",
-      twitter: "#"
     }
   ];
 
