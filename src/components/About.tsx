@@ -61,8 +61,8 @@ const About = () => {
             <div className="text-muted-foreground">Target Fund Raise</div>
           </div>
           <div className="text-center space-y-2">
-            <div className="text-3xl md:text-4xl font-bold text-success">36</div>
-            <div className="text-muted-foreground">Months - Minimum tenure for optimal returns</div>
+            <div className="text-3xl md:text-4xl font-bold text-success">36 Months</div>
+            <div className="text-muted-foreground">Minimum tenure for optimal returns</div>
           </div>
           <div className="text-center space-y-2">
             <div className="text-3xl md:text-4xl font-bold text-primary">3</div>
