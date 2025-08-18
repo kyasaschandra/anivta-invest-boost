@@ -38,13 +38,13 @@ const Index = () => {
       <Navigation />
       <div id="pdf-content">
         <Hero />
-        <About />
         <FundStructure />
         <InvestmentObjectives />
         <TargetMarkets />
         <Team />
         <Contact />
         <FundDocuments />
+        <About />
         <Footer />
       </div>
     </div>
