@@ -91,6 +91,19 @@ const About = () => {
                   </AspectRatio>
                 </div>
               </CarouselItem>
+              <CarouselItem>
+                <div className="relative rounded-2xl overflow-hidden shadow-card">
+                  <AspectRatio ratio={16 / 9}>
+                    <iframe
+                      src="https://www.youtube.com/embed/eXRppdEf5pc"
+                      title="Anvita Group Project Showcase"
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </AspectRatio>
+                </div>
+              </CarouselItem>
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />
