@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Shield, ShieldCheck, Lock, Building2 } from "lucide-react";
-import { useRef, useCallback, useEffect } from "react";
+import { useRef, useCallback } from "react";
 
 const About = () => {
   const video1Ref = useRef<HTMLIFrameElement>(null);
