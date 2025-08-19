@@ -2,8 +2,28 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Shield, ShieldCheck, Lock, Building2 } from "lucide-react";
+import { useRef, useCallback } from "react";
+import type { CarouselApi } from "@/components/ui/carousel";
 
 const About = () => {
+  const video1Ref = useRef<HTMLIFrameElement>(null);
+  const video2Ref = useRef<HTMLIFrameElement>(null);
+  const carouselApiRef = useRef<CarouselApi | null>(null);
+
+  const pauseAllVideos = useCallback(() => {
+    // Pause YouTube videos by sending postMessage
+    if (video1Ref.current) {
+      video1Ref.current.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    }
+    if (video2Ref.current) {
+      video2Ref.current.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    }
+  }, []);
+
+  const handleSlideChange = useCallback(() => {
+    pauseAllVideos();
+  }, [pauseAllVideos]);
+
   const features = [
     {
       icon: Shield,
@@ -65,7 +85,15 @@ const About = () => {
               Our fund is backed by Anvita Group's two decades of delivering premium residential and commercial developments across global markets.
             </p>
           </div>
-          <Carousel className="w-full max-w-5xl mx-auto">
+          <Carousel 
+            className="w-full max-w-5xl mx-auto"
+            setApi={(api) => {
+              carouselApiRef.current = api;
+              if (api) {
+                api.on("select", handleSlideChange);
+              }
+            }}
+          >
             <CarouselContent>
               <CarouselItem>
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
@@ -82,7 +110,8 @@ const About = () => {
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
                   <AspectRatio ratio={16 / 9}>
                     <iframe
-                      src="https://www.youtube.com/embed/DDx16jiwZI0"
+                      ref={video1Ref}
+                      src="https://www.youtube.com/embed/DDx16jiwZI0?enablejsapi=1"
                       title="Anvita Group Development Showcase"
                       className="w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -95,7 +124,8 @@ const About = () => {
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
                   <AspectRatio ratio={16 / 9}>
                     <iframe
-                      src="https://www.youtube.com/embed/eXRppdEf5pc"
+                      ref={video2Ref}
+                      src="https://www.youtube.com/embed/eXRppdEf5pc?enablejsapi=1"
                       title="Anvita Group Project Showcase"
                       className="w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -105,8 +135,8 @@ const About = () => {
                 </div>
               </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious onClick={pauseAllVideos} />
+            <CarouselNext onClick={pauseAllVideos} />
           </Carousel>
         </div>
 
