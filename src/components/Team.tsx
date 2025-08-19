@@ -61,7 +61,7 @@ const Team = () => {
                       </p>
                       
                       <p>
-                        Through this dual strategy of developing <span className="font-semibold text-primary">landmark projects under Anvita Homes</span> and financing them via <span className="font-semibold text-primary">Anvita Capital Fund</span>, Rao is extending his proven expertise to the global investment community, aligning <span className="font-semibold text-primary">institutional-grade discipline with entrepreneurial agility</span>.
+                        Through this dual strategy of developing landmark projects under Anvita Homes and financing them via Anvita Capital Fund, Rao is extending his proven expertise to the global investment community, aligning institutional-grade discipline with entrepreneurial agility.
                       </p>
                     </div>
                   </div>
