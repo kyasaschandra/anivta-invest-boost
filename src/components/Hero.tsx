@@ -23,7 +23,7 @@ const Hero = () => {
               <span className="block text-accent">Fund LLC</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              With two decades of proven success in delivering high-quality residential and commercial developments, Anvita Group is channeling its expertise into Anvita Capital Fund LLC — offering secured, fixed-income investment opportunities backed by real assets worldwide.
+              With 20+ years of proven success in delivering high-quality residential and commercial developments, Anvita Group is channeling its expertise into Anvita Capital Fund LLC — offering secured, fixed-income investment opportunities backed by real assets worldwide.
             </p>
           </div>
           
