@@ -16,6 +16,12 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white pt-32 md:pt-24">{/* Increased top padding to avoid nav overlap */}
         <div className="space-y-8">
+          {/* Badge */}
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+            <TrendingUp className="w-4 h-4 mr-2 text-accent" />
+            <span className="text-sm font-medium">🏆 20+ Years of Real Estate Excellence – Now Powering a Global Debt Fund</span>
+          </div>
+          
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="mx-auto w-fit rounded-2xl bg-background/20 backdrop-blur-sm px-4 py-3 sm:px-6 sm:py-4 text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
