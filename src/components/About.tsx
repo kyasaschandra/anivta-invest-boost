@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Shield, ShieldCheck, Lock, Building2 } from "lucide-react";
 
 const About = () => {
@@ -64,15 +65,36 @@ const About = () => {
               Our fund is backed by Anvita Group's two decades of delivering premium residential and commercial developments across global markets.
             </p>
           </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-card">
-            <AspectRatio ratio={16 / 9}>
-              <img 
-                src="/lovable-uploads/1cec7eda-1bf8-4690-9410-beebfbbbd0ce.png" 
-                alt="Modern residential development with premium amenities, swimming pool, and high-rise towers showcasing Anvita Group's architectural excellence"
-                className="object-cover w-full h-full"
-              />
-            </AspectRatio>
-          </div>
+          <Carousel className="w-full max-w-5xl mx-auto">
+            <CarouselContent>
+              <CarouselItem>
+                <div className="relative rounded-2xl overflow-hidden shadow-card">
+                  <AspectRatio ratio={16 / 9}>
+                    <img 
+                      src="/lovable-uploads/1cec7eda-1bf8-4690-9410-beebfbbbd0ce.png" 
+                      alt="Modern residential development with premium amenities, swimming pool, and high-rise towers showcasing Anvita Group's architectural excellence"
+                      className="object-cover w-full h-full"
+                    />
+                  </AspectRatio>
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div className="relative rounded-2xl overflow-hidden shadow-card">
+                  <AspectRatio ratio={16 / 9}>
+                    <iframe
+                      src="https://www.youtube.com/embed/DDx16jiwZI0"
+                      title="Anvita Group Development Showcase"
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </AspectRatio>
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
 
         {/* Stats Section */}
