@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Globe } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-hero text-white">
-      <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
+      <div className="max-w-7xl mx-auto px-6 py-6 md:py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Company Info */}
           <div className="space-y-6">
@@ -16,17 +16,6 @@ const Footer = () => {
               <p className="text-white/80 mt-2 leading-relaxed">
                 Strategic investment solutions for sustainable growth and exceptional returns.
               </p>
-            </div>
-            <div className="flex space-x-4">
-              <Button size="sm" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-primary">
-                <Linkedin className="w-4 h-4" />
-              </Button>
-              <Button size="sm" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-primary">
-                <Twitter className="w-4 h-4" />
-              </Button>
-              <Button size="sm" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-primary">
-                <Globe className="w-4 h-4" />
-              </Button>
             </div>
           </div>
 
@@ -53,7 +42,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/20 mt-10 md:mt-12 pt-6">
+        <div className="border-t border-white/20 mt-6 md:mt-8 pt-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-white/60 text-sm">
               © {currentYear} Anvita Capital Fund LLC. All rights reserved.
