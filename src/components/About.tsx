@@ -7,6 +7,7 @@ import { useRef, useCallback } from "react";
 const About = () => {
   const video1Ref = useRef<HTMLIFrameElement>(null);
   const video2Ref = useRef<HTMLIFrameElement>(null);
+  const video3Ref = useRef<HTMLIFrameElement>(null);
 
   const pauseAllVideos = useCallback(() => {
     // Pause YouTube videos by sending postMessage
@@ -15,6 +16,9 @@ const About = () => {
     }
     if (video2Ref.current) {
       video2Ref.current.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    }
+    if (video3Ref.current) {
+      video3Ref.current.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     }
   }, []);
 
@@ -104,6 +108,20 @@ const About = () => {
                       ref={video2Ref}
                       src="https://www.youtube.com/embed/DDx16jiwZI0?enablejsapi=1"
                       title="Anvita Group Development Showcase"
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </AspectRatio>
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div className="relative rounded-2xl overflow-hidden shadow-card">
+                  <AspectRatio ratio={16 / 9}>
+                    <iframe
+                      ref={video3Ref}
+                      src="https://www.youtube.com/embed/nFoCEj9fPXo?enablejsapi=1"
+                      title="Anvita Group Portfolio Showcase"
                       className="w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
