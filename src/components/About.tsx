@@ -1,26 +1,26 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Target, Lightbulb, Award, Globe } from "lucide-react";
+import { Shield, ShieldCheck, Lock, Building2 } from "lucide-react";
 
 const About = () => {
   const features = [
     {
-      icon: Target,
+      icon: Shield,
       title: "Asset-Backed Security",
       description: "Loans secured by prime real estate assets in the USA, India, and UAE, ensuring capital preservation and stability."
     },
     {
-      icon: Lightbulb,
+      icon: ShieldCheck,
       title: "Fixed Income Strategy",
       description: "Predictable quarterly, half-yearly, or annual payouts with no foreign exchange exposure - all USD denominated."
     },
     {
-      icon: Award,
+      icon: Lock,
       title: "Proven Sponsor",
       description: "Backed by Anvita Group's track record and expertise in residential and commercial real estate development."
     },
     {
-      icon: Globe,
+      icon: Building2,
       title: "Global Portfolio",
       description: "Diversified real estate debt investments across three key markets: United States, India, and United Arab Emirates."
     }
