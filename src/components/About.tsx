@@ -86,21 +86,10 @@ const About = () => {
               <CarouselItem>
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
                   <AspectRatio ratio={16 / 9}>
-                    <img 
-                      src="/lovable-uploads/1cec7eda-1bf8-4690-9410-beebfbbbd0ce.png" 
-                      alt="Modern residential development with premium amenities, swimming pool, and high-rise towers showcasing Anvita Group's architectural excellence"
-                      className="object-cover w-full h-full"
-                    />
-                  </AspectRatio>
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="relative rounded-2xl overflow-hidden shadow-card">
-                  <AspectRatio ratio={16 / 9}>
                     <iframe
                       ref={video1Ref}
-                      src="https://www.youtube.com/embed/DDx16jiwZI0?enablejsapi=1"
-                      title="Anvita Group Development Showcase"
+                      src="https://www.youtube.com/embed/eXRppdEf5pc?enablejsapi=1"
+                      title="Anvita Group Project Showcase"
                       className="w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
@@ -113,8 +102,8 @@ const About = () => {
                   <AspectRatio ratio={16 / 9}>
                     <iframe
                       ref={video2Ref}
-                      src="https://www.youtube.com/embed/eXRppdEf5pc?enablejsapi=1"
-                      title="Anvita Group Project Showcase"
+                      src="https://www.youtube.com/embed/DDx16jiwZI0?enablejsapi=1"
+                      title="Anvita Group Development Showcase"
                       className="w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
