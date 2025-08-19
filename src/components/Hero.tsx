@@ -29,7 +29,7 @@ const Hero = () => {
               <span className="block text-accent">Fund LLC</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              With two decades of proven success in delivering high-quality residential and commercial developments, Anvita Group is channeling its expertise into Anvita Capital Fund LLC — offering secured, fixed-income investment opportunities backed by real assets worldwide.
+              With two decades of proven success in delivering high-quality residential and commercial developments like <a href="https://anvitaivana.in/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors underline">Anvita Ivana</a>, <a href="https://anvitahigh9.com/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors underline">Anvita High9</a>, <a href="https://anvitaparkside.com/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors underline">Anvita Parkside</a>, <a href="https://www.anvitagroup.com/anvita-commercial.html" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors underline">Anvita Commercial</a>, and <a href="https://www.anvitagroup.com/anvita-amari.html" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors underline">Anvita Amari</a>, Anvita Group is channeling its expertise into Anvita Capital Fund LLC — offering secured, fixed-income investment opportunities backed by real assets worldwide.
             </p>
           </div>
           
