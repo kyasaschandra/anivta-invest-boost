@@ -117,9 +117,11 @@ const FAQPage = () => {
           <h3 className="text-3xl font-display font-bold mb-6 text-foreground">
             Ready to start investing with Anvita Capital?
           </h3>
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            Start investing today!
-          </Button>
+          <a href="/#investment-inquiry" className="no-underline">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              Start investing today!
+            </Button>
+          </a>
         </div>
       </section>
 
