@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Shield, Users } from "lucide-react";
-import heroBackground from "@/assets/hero-background.jpg";
+const heroBackground = "/lovable-uploads/35444d47-6dbf-46e4-ac89-7cb4a405e72b.png";
 
 const Hero = () => {
   return (
