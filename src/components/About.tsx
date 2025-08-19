@@ -79,7 +79,9 @@ const About = () => {
               Our fund is backed by Anvita Group's two decades of delivering premium residential and commercial developments across global markets.
             </p>
           </div>
-          <Carousel className="w-full max-w-5xl mx-auto">
+          <Carousel className="w-full max-w-5xl mx-auto" setApi={(api) => {
+            api?.on("select", () => pauseAllVideos());
+          }}>
             <CarouselContent>
               <CarouselItem>
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
@@ -121,8 +123,8 @@ const About = () => {
                 </div>
               </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious onClick={pauseAllVideos} />
-            <CarouselNext onClick={pauseAllVideos} />
+            <CarouselPrevious />
+            <CarouselNext />
           </Carousel>
         </div>
 
