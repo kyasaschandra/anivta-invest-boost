@@ -2,13 +2,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Shield, ShieldCheck, Lock, Building2 } from "lucide-react";
-import { useRef, useCallback } from "react";
-import type { CarouselApi } from "@/components/ui/carousel";
+import { useRef, useCallback, useEffect } from "react";
 
 const About = () => {
   const video1Ref = useRef<HTMLIFrameElement>(null);
   const video2Ref = useRef<HTMLIFrameElement>(null);
-  const carouselApiRef = useRef<CarouselApi | null>(null);
 
   const pauseAllVideos = useCallback(() => {
     // Pause YouTube videos by sending postMessage
@@ -19,10 +17,6 @@ const About = () => {
       video2Ref.current.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     }
   }, []);
-
-  const handleSlideChange = useCallback(() => {
-    pauseAllVideos();
-  }, [pauseAllVideos]);
 
   const features = [
     {
@@ -85,15 +79,7 @@ const About = () => {
               Our fund is backed by Anvita Group's two decades of delivering premium residential and commercial developments across global markets.
             </p>
           </div>
-          <Carousel 
-            className="w-full max-w-5xl mx-auto"
-            setApi={(api) => {
-              carouselApiRef.current = api;
-              if (api) {
-                api.on("select", handleSlideChange);
-              }
-            }}
-          >
+          <Carousel className="w-full max-w-5xl mx-auto">
             <CarouselContent>
               <CarouselItem>
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
