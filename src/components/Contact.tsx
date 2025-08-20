@@ -38,12 +38,6 @@ const Contact = () => {
             Explore secured, fixed-income real estate debt opportunities with Anvita Capital Fund LLC. 
             Contact our team to learn about our asset-backed investment structure.
           </p>
-          <div className="bg-muted/50 rounded-lg p-6 mt-8 max-w-3xl mx-auto">
-            <p className="text-muted-foreground text-center">
-              Reach out to us to request a copy of our Private Placement Memorandum (PPM) and detailed investor materials. 
-              Our team will be happy to provide further information and guide you through the process.
-            </p>
-          </div>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -51,6 +45,12 @@ const Contact = () => {
           <Card className="shadow-elegant">
             <CardHeader>
               <CardTitle className="text-2xl text-primary">Investment Inquiry</CardTitle>
+              <div className="bg-muted/50 rounded-lg p-4 mt-4">
+                <p className="text-muted-foreground text-sm">
+                  Reach out to us to request a copy of our Private Placement Memorandum (PPM) and detailed investor materials. 
+                  Our team will be happy to provide further information and guide you through the process.
+                </p>
+              </div>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
