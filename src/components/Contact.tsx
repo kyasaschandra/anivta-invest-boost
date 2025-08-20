@@ -13,6 +13,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     investmentAmount: "",
     message: ""
@@ -28,6 +29,7 @@ const Contact = () => {
           {
             name: formData.name,
             email: formData.email,
+            phone_number: formData.phone || null,
             company: formData.company || null,
             investment_interest: formData.investmentAmount || null,
             message: formData.message,
@@ -48,7 +50,7 @@ const Contact = () => {
         title: "Message Sent",
         description: "Thank you for your interest. Our team will contact you within 24 hours.",
       });
-      setFormData({ name: "", email: "", company: "", investmentAmount: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", company: "", investmentAmount: "", message: "" });
     } catch (error) {
       console.error('Unexpected error:', error);
       toast({
@@ -107,6 +109,17 @@ const Contact = () => {
                       required
                     />
                   </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Phone Number</Label>
+                  <Input 
+                    id="phone"
+                    type="tel"
+                    placeholder="e.g., +1 (555) 123-4567"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  />
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
