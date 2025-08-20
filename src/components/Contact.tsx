@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -17,13 +18,45 @@ const Contact = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent",
-      description: "Thank you for your interest. Our team will contact you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", company: "", investmentAmount: "", message: "" });
+    
+    try {
+      const { error } = await supabase
+        .from('investment_enquiries')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            company: formData.company || null,
+            investment_interest: formData.investmentAmount || null,
+            message: formData.message,
+          }
+        ]);
+
+      if (error) {
+        console.error('Error submitting form:', error);
+        toast({
+          title: "Error",
+          description: "There was an issue submitting your inquiry. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      toast({
+        title: "Message Sent",
+        description: "Thank you for your interest. Our team will contact you within 24 hours.",
+      });
+      setFormData({ name: "", email: "", company: "", investmentAmount: "", message: "" });
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast({
+        title: "Error",
+        description: "There was an unexpected error. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
