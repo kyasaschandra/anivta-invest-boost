@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -13,11 +14,27 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    countryCode: "",
     phone: "",
     company: "",
     investmentAmount: "",
     message: ""
   });
+
+  const countryCodes = [
+    { code: "+1", country: "US/Canada" },
+    { code: "+44", country: "UK" },
+    { code: "+91", country: "India" },
+    { code: "+86", country: "China" },
+    { code: "+81", country: "Japan" },
+    { code: "+49", country: "Germany" },
+    { code: "+33", country: "France" },
+    { code: "+39", country: "Italy" },
+    { code: "+34", country: "Spain" },
+    { code: "+61", country: "Australia" },
+    { code: "+971", country: "UAE" },
+    { code: "+65", country: "Singapore" },
+  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,6 +46,7 @@ const Contact = () => {
           {
             name: formData.name,
             email: formData.email,
+            country_code: formData.countryCode || null,
             phone_number: formData.phone || null,
             company: formData.company || null,
             investment_interest: formData.investmentAmount || null,
@@ -50,7 +68,7 @@ const Contact = () => {
         title: "Message Sent",
         description: "Thank you for your interest. Our team will contact you within 24 hours.",
       });
-      setFormData({ name: "", email: "", phone: "", company: "", investmentAmount: "", message: "" });
+      setFormData({ name: "", email: "", countryCode: "", phone: "", company: "", investmentAmount: "", message: "" });
     } catch (error) {
       console.error('Unexpected error:', error);
       toast({
@@ -112,14 +130,29 @@ const Contact = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input 
-                    id="phone"
-                    type="tel"
-                    placeholder="e.g., +1 (555) 123-4567"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  />
+                  <Label htmlFor="phone">Contact Number</Label>
+                  <div className="flex gap-2">
+                    <Select value={formData.countryCode} onValueChange={(value) => setFormData({...formData, countryCode: value})}>
+                      <SelectTrigger className="w-32 bg-background border-input">
+                        <SelectValue placeholder="Code" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-background border-border shadow-lg z-50">
+                        {countryCodes.map((item) => (
+                          <SelectItem key={item.code} value={item.code} className="hover:bg-accent">
+                            {item.code} {item.country}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <Input 
+                      id="phone"
+                      type="tel"
+                      placeholder="123-456-7890"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      className="flex-1"
+                    />
+                  </div>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

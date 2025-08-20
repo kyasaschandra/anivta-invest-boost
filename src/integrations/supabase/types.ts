@@ -17,6 +17,7 @@ export type Database = {
       investment_enquiries: {
         Row: {
           company: string | null
+          country_code: string | null
           created_at: string
           email: string
           id: string
@@ -28,6 +29,7 @@ export type Database = {
         }
         Insert: {
           company?: string | null
+          country_code?: string | null
           created_at?: string
           email: string
           id?: string
@@ -39,6 +41,7 @@ export type Database = {
         }
         Update: {
           company?: string | null
+          country_code?: string | null
           created_at?: string
           email?: string
           id?: string
