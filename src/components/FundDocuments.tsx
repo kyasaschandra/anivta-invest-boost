@@ -13,27 +13,7 @@ const FundDocuments = () => {
           <h2 id="fund-documents-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">
             Fund Documents
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Download the latest Private Placement Memorandum (PPM) for full terms, risks, and disclosures.
-          </p>
         </header>
-
-        <div className="mx-auto max-w-xl rounded-2xl border border-border bg-card p-6 text-center shadow-elegant">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="inline-flex w-10 h-10 items-center justify-center rounded-full bg-gradient-primary text-white">
-              <FileText className="w-5 h-5" />
-            </div>
-            <h3 className="text-xl font-semibold text-primary">Private Placement Memorandum (PPM)</h3>
-          </div>
-          <p className="text-sm text-muted-foreground mb-6">
-            PDF • Updated regularly • Contains offering details and investor eligibility
-          </p>
-          <a href={ppmHref} download className="inline-block" aria-label="Download Fund PPM (PDF)">
-            <Button size="lg" className="group">
-              Download PPM
-            </Button>
-          </a>
-        </div>
 
         {/* Disclaimer under Fund Documents */}
         <div className="mx-auto max-w-3xl mt-6">
