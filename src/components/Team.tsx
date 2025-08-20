@@ -1,12 +1,23 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const Team = () => {
+  const [showFullBio, setShowFullBio] = useState(false);
+  
   const teamMembers = [
     {
       name: "Atchuta Rao Boppana",
       role: "Fund Manager & Real Estate Visionary",
       initials: "ARB",
-      bio: "With over two decades of real estate leadership, Atchuta Rao Boppana has successfully delivered residential, commercial, and mixed-use projects across India and the UAE. As a founding force behind Anvita Group, he has built a reputation for executing large-scale developments that combine modern design, sustainability, and strong financial performance. His leadership is defined by a deep understanding of market dynamics, meticulous project execution, and a commitment to transparency and investor trust. Under his leadership, Anvita Group is currently developing a diverse portfolio of projects in Hyderabad, India, including Anvita Ivana (a premium high-rise gated community), Anvita High9 (an iconic nine-tower sky bridge project), Anvita Parkside (exclusive villa residences), Anvita Commercial (modern office and retail spaces), and Anvita Amari (a mixed-use lifestyle development). These ongoing projects reflect the Group's commitment to innovation, quality, and sustainable community living. Now venturing into the United States real estate market, Rao is spearheading Anvita Homes' expansion into Texas, one of the nation's fastest-growing real estate hubs. Under his leadership, Anvita Homes is launching residential communities and commercial mixed-use developments in strategic growth corridors to meet the region's surging demand. Rao's vision for construction is firmly rooted in sustainability and green architecture, integrating eco-friendly practices, energy efficiency, and responsible material use. He is equally committed to delivering higher and luxury amenities, strict safety protocols, and setting new benchmarks in construction standards. To achieve this, he consistently engages with renowned architects, industry consultants, and global project management teams, ensuring that every Anvita project combines innovation, functionality, and long-term value. In parallel, Rao has launched Anvita Capital Fund, a private real estate debt platform designed to give investors secure, asset-backed opportunities with predictable fixed returns, no FX risk, and flexible 90-day liquidity. His vision for the Fund is to bridge global capital with high-quality real estate projects, creating a secure, scalable, and sustainable investment vehicle that delivers both financial returns and lasting community impact. Through this dual strategy of developing landmark projects under Anvita Homes and financing them via Anvita Capital Fund, Rao is extending his proven expertise to the global investment community, aligning institutional-grade discipline with entrepreneurial agility.",
+      bio: {
+        paragraph1: "Atchuta Rao Boppana is the driving force behind the launch of Anvita Capital Fund, a private real estate debt platform designed to provide investors with secure, asset-backed opportunities that deliver predictable fixed returns, no FX risk, and flexible 90-day liquidity. His vision for the Fund is to bridge global capital with high-quality real estate projects, building a secure, scalable, and sustainable investment vehicle that generates reliable financial returns while creating lasting community impact.",
+        paragraph2: "With over two decades of real estate leadership, Rao has successfully delivered residential, commercial, and mixed-use developments across India and the UAE. As a founding force behind Anvita Group, he has established a reputation for executing large-scale projects that combine modern design, sustainable practices, and strong financial performance. His leadership is characterized by a deep understanding of market dynamics, meticulous project execution, and a commitment to transparency and investor trust.",
+        paragraph3: "Under his leadership, Anvita Group is currently developing a diverse portfolio of projects in Hyderabad, India, including Anvita Ivana (a premium high-rise gated community), Anvita High9 (an iconic nine-tower sky bridge project), Anvita Parkside (exclusive villa residences), Anvita Commercial (modern office and retail spaces), and Anvita Amari (a mixed-use lifestyle development). These ongoing projects highlight the Group's commitment to innovation, quality, and sustainable community living.",
+        paragraph4: "Now expanding into the United States real estate market, Rao is spearheading Anvita Homes' entry into Texas, one of the country's fastest-growing real estate hubs. The Texas pipeline includes residential communities and commercial mixed-use developments in key growth corridors, designed to meet rising demand while setting new standards of design and delivery.",
+        paragraph5: "Rao's vision for construction emphasizes sustainability, green architecture, energy efficiency, and responsible material use, while integrating luxury amenities, strict safety protocols, and next-generation construction standards. He partners with renowned architects, industry consultants, and global project management teams to ensure every Anvita project delivers innovation, functionality, and long-term value.",
+        paragraph6: "Through this dual approach of financing via Anvita Capital Fund and developing under Anvita Homes, Rao is extending his proven expertise to the global investment community—aligning institutional-grade discipline with entrepreneurial agility."
+      },
       linkedin: "#",
       twitter: "#"
     }
@@ -40,29 +51,27 @@ const Team = () => {
                   {/* Content Section - Full Width */}
                   <div className="w-full">
                     <div className="space-y-4 text-muted-foreground leading-relaxed text-justify">
-                      <p>
-                        With over <span className="font-semibold text-primary">two decades of real estate leadership</span>, <span className="font-semibold text-primary">Atchuta Rao Boppana</span> has successfully delivered residential, commercial, and mixed-use projects across <span className="font-semibold text-primary">India and the UAE</span>. As a founding force behind <span className="font-semibold text-primary">Anvita Group</span>, he has built a reputation for executing large-scale developments that combine <span className="font-semibold text-primary">modern design, sustainability, and strong financial performance</span>. His leadership is defined by a deep understanding of market dynamics, meticulous project execution, and a commitment to <span className="font-semibold text-primary">transparency and investor trust</span>.
-                      </p>
+                      <p>{member.bio.paragraph1}</p>
+                      <p>{member.bio.paragraph2}</p>
                       
-                      <p>
-                        Under his leadership, <span className="text-primary">Anvita Group</span> is currently developing a diverse portfolio of projects in <span className="text-primary">Hyderabad, India</span>, including <a href="https://anvitaivana.in/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors underline">Anvita Ivana</a> (a premium high-rise gated community), <a href="https://anvitahigh9.com/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors underline">Anvita High9</a> (an iconic nine-tower sky bridge project), <a href="https://anvitaparkside.com/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors underline">Anvita Parkside</a> (exclusive villa residences), <a href="https://www.anvitagroup.com/anvita-commercial.html" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors underline">Anvita Commercial</a> (modern office and retail spaces), and <a href="https://www.anvitagroup.com/anvita-amari.html" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors underline">Anvita Amari</a> (a mixed-use lifestyle development). These ongoing projects reflect the Group's commitment to <span className="text-primary">innovation, quality, and sustainable community living</span>.
-                      </p>
-                      
-                      <p>
-                        Now venturing into the <span className="font-semibold text-primary">United States real estate market</span>, Rao is spearheading <span className="font-semibold text-primary">Anvita Homes' expansion into Texas</span>, one of the nation's <span className="font-semibold text-primary">fastest-growing real estate hubs</span>. Under his leadership, Anvita Homes is launching residential communities and commercial mixed-use developments in strategic growth corridors to meet the region's surging demand.
-                      </p>
-                      
-                      <p>
-                        Rao's vision for construction is firmly rooted in <span className="font-semibold text-primary">sustainability and green architecture</span>, integrating <span className="font-semibold text-primary">eco-friendly practices, energy efficiency, and responsible material use</span>. He is equally committed to delivering higher and luxury amenities, strict safety protocols, and setting new benchmarks in construction standards. To achieve this, he consistently engages with <span className="font-semibold text-primary">renowned architects, industry consultants, and global project management teams</span>, ensuring that every Anvita project combines innovation, functionality, and long-term value.
-                      </p>
-                      
-                      <p>
-                        In parallel, Rao has launched <span className="font-semibold text-primary">Anvita Capital Fund</span>, a private real estate debt platform designed to give investors <span className="font-semibold text-primary">secure, asset-backed opportunities with predictable fixed returns, no FX risk, and flexible 90-day liquidity</span>. His vision for the Fund is to bridge global capital with high-quality real estate projects, creating a secure, scalable, and sustainable investment vehicle that delivers both financial returns and lasting community impact.
-                      </p>
-                      
-                      <p>
-                        Through this dual strategy of developing landmark projects under Anvita Homes and financing them via Anvita Capital Fund, Rao is extending his proven expertise to the global investment community, aligning institutional-grade discipline with entrepreneurial agility.
-                      </p>
+                      {showFullBio && (
+                        <>
+                          <p>{member.bio.paragraph3}</p>
+                          <p>{member.bio.paragraph4}</p>
+                          <p>{member.bio.paragraph5}</p>
+                          <p>{member.bio.paragraph6}</p>
+                        </>
+                      )}
+                    </div>
+                    
+                    <div className="mt-6 text-center">
+                      <Button 
+                        variant="outline" 
+                        onClick={() => setShowFullBio(!showFullBio)}
+                        className="px-6 py-2"
+                      >
+                        {showFullBio ? "Read Less" : "Read More"}
+                      </Button>
                     </div>
                   </div>
                 </div>
