@@ -5,12 +5,16 @@ import { Shield, ShieldCheck, Lock, Building2 } from "lucide-react";
 import { useRef, useCallback } from "react";
 
 const About = () => {
+  const newVideoRef = useRef<HTMLIFrameElement>(null);
   const video1Ref = useRef<HTMLIFrameElement>(null);
   const video2Ref = useRef<HTMLIFrameElement>(null);
   const video3Ref = useRef<HTMLIFrameElement>(null);
 
   const pauseAllVideos = useCallback(() => {
     // Pause YouTube videos by sending postMessage
+    if (newVideoRef.current) {
+      newVideoRef.current.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    }
     if (video1Ref.current) {
       video1Ref.current.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     }
@@ -87,6 +91,20 @@ const About = () => {
             api?.on("select", () => pauseAllVideos());
           }}>
             <CarouselContent>
+              <CarouselItem>
+                <div className="relative rounded-2xl overflow-hidden shadow-card">
+                  <AspectRatio ratio={16 / 9}>
+                    <iframe
+                      ref={newVideoRef}
+                      src="https://www.youtube.com/embed/lZnAcCtuGE4?enablejsapi=1"
+                      title="Anvita Group Featured Video"
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </AspectRatio>
+                </div>
+              </CarouselItem>
               <CarouselItem>
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
                   <AspectRatio ratio={16 / 9}>
