@@ -50,7 +50,14 @@ const AnvitaGroup = () => {
               We ensure that every project we undertake is completed with precision and accuracy, using the latest technology and best practices to deliver exceptional results that continue to exceed our customers' expectations.
             </p>
             <div className="text-xl font-semibold text-primary">
-              We are Anvita Group!
+              <a 
+                href="https://www.anvitagroup.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-primary/80 transition-colors duration-300 underline decoration-2 underline-offset-4"
+              >
+                We are Anvita Group!
+              </a>
             </div>
           </div>
 
