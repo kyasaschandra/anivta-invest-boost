@@ -28,10 +28,10 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- WhatsApp Button Script - Mobile Only -->
+    <!-- WhatsApp Button Script - Tablet and Mobile Only -->
     <script>
-      // Only load WhatsApp button on mobile devices
-      if (window.innerWidth <= 768) {
+      // Load WhatsApp button on tablet and mobile devices (below 1024px)
+      if (window.innerWidth < 1024) {
         var url = 'https://cdn.waplus.io/waplus-crm/settings/ossembed.js';
         var s = document.createElement('script');
         s.type = 'text/javascript';

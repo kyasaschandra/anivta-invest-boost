@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import WhatsAppQR from "@/components/WhatsAppQR";
 
 const PrivacyPolicyPage = () => {
   useEffect(() => {
@@ -185,6 +186,7 @@ const PrivacyPolicyPage = () => {
         </article>
       </main>
       <Footer />
+      <WhatsAppQR />
     </div>
   );
 };

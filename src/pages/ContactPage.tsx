@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import WhatsAppQR from "@/components/WhatsAppQR";
 
 const ContactPage = () => {
   useEffect(() => {
@@ -59,6 +60,7 @@ const ContactPage = () => {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppQR />
     </div>
   );
 };

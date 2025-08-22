@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import WhatsAppQR from "@/components/WhatsAppQR";
 import {
   Accordion,
   AccordionContent,
@@ -126,6 +127,7 @@ const FAQPage = () => {
       </section>
 
       <Footer />
+      <WhatsAppQR />
     </div>
   );
 };
