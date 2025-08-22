@@ -6,7 +6,7 @@ const WhatsAppQR = () => {
 
   return (
     <>
-      {/* Desktop QR Code (1024px and above) */}
+      {/* Desktop QR Code (1024px and above) - Only visible on desktop */}
       <div className="hidden lg:block fixed bottom-6 right-6 z-50">
         <HoverCard>
           <HoverCardTrigger asChild>
@@ -50,11 +50,6 @@ const WhatsAppQR = () => {
             </div>
           </HoverCardContent>
         </HoverCard>
-      </div>
-
-      {/* Tablet and Mobile WhatsApp Button (Original Script) */}
-      <div className="lg:hidden">
-        {/* Tablet and mobile users will see the original WhatsApp button from the script */}
       </div>
     </>
   );
