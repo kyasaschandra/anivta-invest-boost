@@ -30,7 +30,12 @@ const About = () => {
     {
       icon: Shield,
       title: "Asset-Backed Security",
-      description: "Loans secured by prime real estate assets in the USA, India, and UAE, ensuring capital preservation and stability."
+      description: (
+        <>
+          Loans secured by prime real estate assets in the USA, India, and UAE, ensuring capital preservation and stability.
+          <a href="/faq#security-interest" className="text-primary hover:underline ml-1">*</a>
+        </>
+      )
     },
     {
       icon: ShieldCheck,
