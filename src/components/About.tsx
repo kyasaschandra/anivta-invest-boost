@@ -33,7 +33,7 @@ const About = () => {
       description: (
         <>
           Loans secured by prime real estate assets in the USA, India, and UAE, ensuring capital preservation and stability.
-          <a href="/faq#security-interest" className="text-primary hover:underline ml-1">*</a>
+          <a href="/faq#security-interest" className="text-yellow-600 hover:text-yellow-700 ml-1 font-semibold">*</a>
         </>
       )
     },
