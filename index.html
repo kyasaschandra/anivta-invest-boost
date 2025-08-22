@@ -28,34 +28,37 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- WhatsApp Button Script -->
+    <!-- WhatsApp Button Script - Mobile Only -->
     <script>
-      var url = 'https://cdn.waplus.io/waplus-crm/settings/ossembed.js';
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = url;
-      var options = {
-        "enabled": true,
-        "chatButtonSetting": {
-          "backgroundColor": "#16BE45",
-          "ctaText": " ",
-          "borderRadius": "25",
-          "marginLeft": "15",
-          "marginBottom": "15",
-          "marginRight": "15",
-          "position": "right",
-          "textColor": "#ffffff",
-          "phoneNumber": "+1 9452179280",
-          "messageText": "👋🏻Hello",
-          "trackClick": true
+      // Only load WhatsApp button on mobile devices
+      if (window.innerWidth <= 768) {
+        var url = 'https://cdn.waplus.io/waplus-crm/settings/ossembed.js';
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = url;
+        var options = {
+          "enabled": true,
+          "chatButtonSetting": {
+            "backgroundColor": "#16BE45",
+            "ctaText": " ",
+            "borderRadius": "25",
+            "marginLeft": "15",
+            "marginBottom": "15",
+            "marginRight": "15",
+            "position": "right",
+            "textColor": "#ffffff",
+            "phoneNumber": "+1 9452179280",
+            "messageText": "👋🏻Hello",
+            "trackClick": true
+          }
         }
+        s.onload = function() {
+          CreateWhatsappBtn(options);
+        };
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
       }
-      s.onload = function() {
-        CreateWhatsappBtn(options);
-      };
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
     </script>
   </body>
 </html>
