@@ -10,6 +10,7 @@ import AnvitaGroup from "@/components/AnvitaGroup";
 import Contact from "@/components/Contact";
 import FundDocuments from "@/components/FundDocuments";
 import Footer from "@/components/Footer";
+import WhatsAppQR from "@/components/WhatsAppQR";
 
 import { useEffect } from "react";
 
@@ -49,6 +50,7 @@ const Index = () => {
         <FundDocuments />
         <Footer />
       </div>
+      <WhatsAppQR />
     </div>
   );
 };
