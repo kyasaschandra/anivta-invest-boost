@@ -78,14 +78,6 @@ const AnvitaGroup = () => {
           </div>
         </div>
 
-        <div className="bg-primary/5 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-semibold text-foreground mb-4">
-            Our Legacy in Dubai
-          </h3>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            From our headquarters in Dubai, we have been redefining urban landscapes and creating exceptional living spaces that stand as testaments to our unwavering commitment to quality and innovation.
-          </p>
-        </div>
 
         {/* Structured Data for SEO */}
         <script
