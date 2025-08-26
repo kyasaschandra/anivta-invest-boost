@@ -7,7 +7,7 @@ import WhatsAppQR from "@/components/WhatsAppQR";
 const ContactPage = () => {
   useEffect(() => {
     // Title
-    document.title = "Invest with Anvita Capital Fund | Investor Relations";
+    document.title = "Contact Anvita Capital Fund – Asset-Backed Real Estate Debt Fund | Fixed Returns | 90-Day Liquidity";
 
     // Meta description
     let meta = document.querySelector('meta[name="description"]');

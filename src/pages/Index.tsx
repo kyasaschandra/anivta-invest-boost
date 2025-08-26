@@ -16,7 +16,7 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Anvita Capital Fund | Secured Real Estate Debt";
+    document.title = "Anvita Capital Fund – Asset-Backed Real Estate Debt Fund | Fixed Returns | 90-Day Liquidity";
 
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
@@ -24,7 +24,7 @@ const Index = () => {
       meta.setAttribute('name', 'description');
       document.head.appendChild(meta);
     }
-    meta.setAttribute('content', 'Fixed-income, asset-backed investment opportunities in USD-denominated real estate loans for accredited investors with no FX risk.');
+    meta.setAttribute('content', 'Anvita Capital Fund – Asset-Backed Real Estate Debt Fund offering fixed returns and 90-day liquidity. USD-denominated investments for accredited investors with no FX risk.');
 
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {

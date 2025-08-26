@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 
 const FAQPage = () => {
   useEffect(() => {
-    document.title = "FAQ | Anvita Capital Fund";
+    document.title = "FAQ | Anvita Capital Fund – Asset-Backed Real Estate Debt Fund | Fixed Returns | 90-Day Liquidity";
     
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {

@@ -6,7 +6,7 @@ import WhatsAppQR from "@/components/WhatsAppQR";
 const PrivacyPolicyPage = () => {
   useEffect(() => {
     // Title
-    document.title = "Privacy Policy - Anvita Capital Fund LLC";
+    document.title = "Privacy Policy - Anvita Capital Fund – Asset-Backed Real Estate Debt Fund | Fixed Returns | 90-Day Liquidity";
 
     // Meta description
     let meta = document.querySelector('meta[name="description"]');
