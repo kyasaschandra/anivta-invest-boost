@@ -61,7 +61,7 @@ const FundStructure = () => {
   } as const;
 
   return (
-    <section id="fund-structure" className="snap-start py-10 md:py-16 bg-gradient-subtle">
+    <section id="fund-structure" className="snap-start py-10 md:py-16 bg-blue-50/80">
       <div className="max-w-7xl mx-auto px-6">
         {/* Fund Structure */}
         <div className="text-center space-y-4 mb-10">
