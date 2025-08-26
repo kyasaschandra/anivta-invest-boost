@@ -40,13 +40,21 @@ const Index = () => {
       <Navigation />
       <div id="pdf-content">
         <Hero />
-        <About />
+        <div className="bg-background">
+          <About />
+        </div>
         <FundStructure />
-        <InvestmentObjectives />
+        <div className="bg-background">
+          <InvestmentObjectives />
+        </div>
         <TargetMarkets />
-        <Team />
+        <div className="bg-background">
+          <Team />
+        </div>
         <AnvitaGroup />
-        <Contact />
+        <div className="bg-background">
+          <Contact />
+        </div>
         <FundDocuments />
         <Footer />
       </div>

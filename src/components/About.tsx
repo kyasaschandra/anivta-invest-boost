@@ -50,7 +50,7 @@ const About = () => {
   ];
 
   return (
-    <section className="snap-start py-10 md:py-16 bg-gradient-card">
+    <section className="snap-start py-10 md:py-16">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-10">
