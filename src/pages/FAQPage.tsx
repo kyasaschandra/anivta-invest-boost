@@ -67,6 +67,10 @@ const FAQPage = () => {
     {
       question: "Do I get 1031 Exchange benefits?",
       answer: "No. The 1031 \"like-kind exchange\" only applies to direct real estate transactions where one U.S. property is sold and proceeds are reinvested into another U.S. property. Since Anvita Capital Fund investors purchase debt securities (Notes) and not real property, §1031 benefits are not available."
+    },
+    {
+      question: "What tax form will I receive as an investor?",
+      answer: "U.S. investors receive Form 1099-INT, which reports the interest income you earned from your investment in the Fund.\n\nNon-U.S. investors receive Form 1042-S, which reports U.S.-sourced interest paid and any taxes withheld."
     }
   ];
 
