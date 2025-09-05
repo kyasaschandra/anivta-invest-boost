@@ -63,6 +63,10 @@ const FAQPage = () => {
     {
       question: "What reporting can investors expect from Anvita Capital Fund LLC regarding their investment?",
       answer: "Anvita Capital Fund LLC is committed to providing investors with periodic updates. No later than ninety (90) days after the end of each calendar year, the Company will email a status report of the investment and activities of the Company to Investors or upload it to a web portal. This report aims to keep investors informed about the Fund's performance and operations. However, it's crucial for prospective investors to note that any pro-forma projections provided are estimates only and should not be relied upon as guaranteed forecasts of financial performance."
+    },
+    {
+      question: "Do I get 1031 Exchange benefits?",
+      answer: "No. The 1031 \"like-kind exchange\" only applies to direct real estate transactions where one U.S. property is sold and proceeds are reinvested into another U.S. property. Since Anvita Capital Fund investors purchase debt securities (Notes) and not real property, §1031 benefits are not available."
     }
   ];
 
