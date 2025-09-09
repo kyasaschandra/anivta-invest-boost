@@ -30,8 +30,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-18 md:h-22 lg:h-24 overflow-hidden">
           <a href="/" className="flex items-center space-x-2" aria-label="Anvita Capital home">
             <img
-              src="/lovable-uploads/79b9e21b-dd63-416b-9655-b28cb1cd19c4.png"
-              alt="Anvita logo"
+              src="/lovable-uploads/851adbd1-5ffe-49f1-8690-cd9799b0d1d0.png"
+              alt="Anvita Capital Fund logo"
               className="h-14 w-auto md:h-18 lg:h-20 object-contain shrink-0 drop-shadow-lg"
               loading="eager"
               decoding="sync"
