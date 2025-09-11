@@ -51,7 +51,7 @@ const ReturnCalculator = () => {
     payoutPerPeriod, 
     annualReturn, 
     totalReturn, 
-    adjustedTotalReturn,
+    adjustedPrincipal,
     frequency, 
     ratePct, 
     durationInMonths,
@@ -64,13 +64,13 @@ const ReturnCalculator = () => {
     const years = months / 12;
     const totalEarnings = amount * rate * years;
     const earlyExitPenalty = months < 36 ? amount * 0.05 : 0;
-    const adjustedEarnings = totalEarnings - earlyExitPenalty;
+    const adjustedPrincipalAmount = amount - earlyExitPenalty;
     
     return {
       payoutPerPeriod: payout,
       annualReturn: amount * rate,
       totalReturn: totalEarnings,
-      adjustedTotalReturn: adjustedEarnings,
+      adjustedPrincipal: adjustedPrincipalAmount,
       frequency: cfg.frequency,
       ratePct: `${(rate * 100).toFixed(2)}% p.a.`,
       durationInMonths: months,
@@ -198,9 +198,9 @@ const ReturnCalculator = () => {
             {hasEarlyExitAdjustment && (
               <div className="text-center rounded-lg bg-orange-50 p-4 border border-orange-200">
                 <div className="text-xs text-orange-800">
-                  After 5% Early Exit Adjustment
+                  Principal After 5% Early Exit Adjustment
                 </div>
-                <div className="text-2xl font-semibold text-orange-700">{formatter.format(adjustedTotalReturn)}</div>
+                <div className="text-2xl font-semibold text-orange-700">{formatter.format(adjustedPrincipal)}</div>
               </div>
             )}
             <div className="text-center rounded-lg bg-card p-4 border border-border">
