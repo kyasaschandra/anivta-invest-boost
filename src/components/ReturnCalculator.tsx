@@ -11,7 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Percent, CalendarDays, DollarSign, Clock, AlertTriangle } from "lucide-react";
+import { Percent, CalendarDays, DollarSign, Clock, AlertTriangle, TrendingUp, Star } from "lucide-react";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -176,9 +176,16 @@ const ReturnCalculator = () => {
                       </div>
                     </CardHeader>
                     <CardContent className="space-y-3 pt-0">
-                      <div className="bg-primary/5 rounded-lg p-3 text-center">
-                        <div className="text-xs font-medium text-muted-foreground mb-1">
-                          Total Return ({durationInMonths} mo)
+                      <div className="bg-primary/5 rounded-lg p-3 text-center relative">
+                        <div className="absolute top-2 right-2 flex items-center gap-1">
+                          <TrendingUp className="w-4 h-4 text-green-600" />
+                          <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
+                        </div>
+                        <div className="text-xs font-medium text-muted-foreground mb-1 flex items-center justify-center gap-1">
+                          <span>Total Return ({durationInMonths} mo)</span>
+                          <span className="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                            High Yield
+                          </span>
                         </div>
                         <div className="text-xl font-bold text-primary">
                           {formatter.format(seriesData.totalReturn)}
