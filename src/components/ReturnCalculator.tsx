@@ -68,7 +68,11 @@ const ReturnCalculator = () => {
     }
     
     const payout = cfg.periods > 0 ? (amount * effectiveRate) / cfg.periods : 0;
-    const totalEarnings = amount * effectiveRate * years;
+    
+    // Calculate compound interest: A = P(1 + r)^t
+    const compoundAmount = amount * Math.pow(1 + effectiveRate, years);
+    const totalEarnings = compoundAmount - amount;
+    
     const earlyExitPenalty = months < 36 ? amount * 0.05 : 0;
     const adjustedPrincipalAmount = amount - earlyExitPenalty;
     
