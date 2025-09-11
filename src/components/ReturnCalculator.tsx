@@ -217,12 +217,23 @@ const ReturnCalculator = () => {
           </div>
 
           {hasEarlyExitAdjustment && (
-            <div className="flex items-center gap-3 p-4 rounded-lg bg-orange-50 border border-orange-200">
-              <AlertTriangle className="w-5 h-5 text-orange-600" />
-              <div className="text-sm text-orange-800">
-                <div className="font-medium">Early Exit Adjustment</div>
-                <div>Withdrawals within 36 months carry a 5% adjustment to safeguard fund stability.</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex items-center gap-3 p-4 rounded-lg bg-orange-50 border border-orange-200">
+                <AlertTriangle className="w-5 h-5 text-orange-600 flex-shrink-0" />
+                <div className="text-sm text-orange-800">
+                  <div className="font-medium">Early Exit Adjustment</div>
+                  <div>Withdrawals within 36 months carry a 5% adjustment to safeguard fund stability.</div>
+                </div>
               </div>
+              {series === 's3' && (
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-blue-50 border border-blue-200">
+                  <Percent className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <div className="text-sm text-blue-800">
+                    <div className="font-medium">ROI Adjustment for Series 3</div>
+                    <div>Returns reduced to 12% p.a. for withdrawals within 36 months.</div>
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
