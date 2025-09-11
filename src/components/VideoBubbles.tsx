@@ -35,7 +35,7 @@ const videos: Video[] = [
   },
   {
     id: "nFoCEj9fPXo",
-    title: "by Anvita",
+    title: "Parkside by Anvita",
     thumbnail: "https://img.youtube.com/vi/nFoCEj9fPXo/maxresdefault.jpg", 
     embedUrl: "https://www.youtube.com/embed/nFoCEj9fPXo?enablejsapi=1",
     description: "Browse through our complete portfolio"
