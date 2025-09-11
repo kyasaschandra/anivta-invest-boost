@@ -21,8 +21,8 @@ const formatter = new Intl.NumberFormat("en-US", {
 
 const seriesMap = {
   s1: { name: "Series 1", frequency: "Quarterly", periods: 4, rate: 0.11 },
-  s2: { name: "Series 2", frequency: "Semi-Annual", periods: 2, rate: 0.115 },
-  s3: { name: "Series 3", frequency: "Annual", periods: 1, rate: 0.12 },
+  s2: { name: "Series 2", frequency: "Annual", periods: 1, rate: 0.12 },
+  s3: { name: "Series 3", frequency: "At Maturity", periods: 0, rate: 0.15, earlyRate: 0.12 },
 } as const;
 
 type SeriesKey = keyof typeof seriesMap;
@@ -58,21 +58,27 @@ const ReturnCalculator = () => {
     hasEarlyExitAdjustment 
   } = useMemo(() => {
     const cfg = seriesMap[series];
-    const rate = cfg.rate;
-    const payout = (amount * rate) / cfg.periods;
     const months = timePeriod === "years" ? duration * 12 : duration;
     const years = months / 12;
-    const totalEarnings = amount * rate * years;
+    
+    // For Series 3, use different rate based on timing
+    let effectiveRate = cfg.rate;
+    if (series === 's3' && months < 36 && 'earlyRate' in cfg) {
+      effectiveRate = cfg.earlyRate;
+    }
+    
+    const payout = cfg.periods > 0 ? (amount * effectiveRate) / cfg.periods : 0;
+    const totalEarnings = amount * effectiveRate * years;
     const earlyExitPenalty = months < 36 ? amount * 0.05 : 0;
     const adjustedPrincipalAmount = amount - earlyExitPenalty;
     
     return {
       payoutPerPeriod: payout,
-      annualReturn: amount * rate,
+      annualReturn: amount * effectiveRate,
       totalReturn: totalEarnings,
       adjustedPrincipal: adjustedPrincipalAmount,
       frequency: cfg.frequency,
-      ratePct: `${(rate * 100).toFixed(2)}% p.a.`,
+      ratePct: `${(effectiveRate * 100).toFixed(2)}% p.a.`,
       durationInMonths: months,
       hasEarlyExitAdjustment: months < 36,
     };
@@ -120,8 +126,8 @@ const ReturnCalculator = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="s1">Series 1 — Quarterly</SelectItem>
-                  <SelectItem value="s2">Series 2 — Semi-Annual</SelectItem>
-                  <SelectItem value="s3">Series 3 — Annual</SelectItem>
+                  <SelectItem value="s2">Series 2 — Annual</SelectItem>
+                  <SelectItem value="s3">Series 3 — At Maturity</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -167,8 +173,12 @@ const ReturnCalculator = () => {
               <div className="flex items-center gap-2 rounded-lg border border-border px-2 py-2">
                 <DollarSign className="w-4 h-4 text-primary" />
                 <div className="text-sm">
-                  <div className="text-muted-foreground text-xs">Per Payout</div>
-                  <div className="font-medium text-xs">{formatter.format(payoutPerPeriod)}</div>
+                  <div className="text-muted-foreground text-xs">
+                    {series === 's3' ? 'At Maturity' : 'Per Payout'}
+                  </div>
+                  <div className="font-medium text-xs">
+                    {series === 's3' ? 'No Interim Payout' : formatter.format(payoutPerPeriod)}
+                  </div>
                 </div>
               </div>
             </div>
