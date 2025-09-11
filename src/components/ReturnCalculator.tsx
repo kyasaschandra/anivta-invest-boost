@@ -189,7 +189,7 @@ const ReturnCalculator = () => {
                         <div className="text-center p-2 bg-card rounded border">
                           <div className="text-xs text-muted-foreground mb-1">Principal Payout</div>
                           <div className="text-sm font-semibold text-foreground">
-                            {formatter.format(amount)}
+                            {formatter.format(hasEarlyExitAdjustment ? seriesData.adjustedPrincipal : amount)}
                           </div>
                         </div>
                         <div className="text-center p-2 bg-card rounded border">
