@@ -33,7 +33,6 @@ const MAX_INVESTMENT = 25_000_000;
 const ReturnCalculator = () => {
   const { toast } = useToast();
   const [amount, setAmount] = useState<number>(MIN_INVESTMENT);
-  const [series, setSeries] = useState<SeriesKey>("s1");
   const [timePeriod, setTimePeriod] = useState<"months" | "years">("years");
   const [duration, setDuration] = useState<number>(3);
 
@@ -47,46 +46,8 @@ const ReturnCalculator = () => {
     }
   }, [amount, toast]);
 
-  const { 
-    payoutPerPeriod, 
-    annualReturn, 
-    totalReturn, 
-    adjustedPrincipal,
-    frequency, 
-    ratePct, 
-    durationInMonths,
-    hasEarlyExitAdjustment 
-  } = useMemo(() => {
-    const cfg = seriesMap[series];
-    const months = timePeriod === "years" ? duration * 12 : duration;
-    const years = months / 12;
-    
-    // For Series 3, use different rate based on timing
-    let effectiveRate = cfg.rate;
-    if (series === 's3' && months < 36 && 'earlyRate' in cfg) {
-      effectiveRate = cfg.earlyRate;
-    }
-    
-    const payout = cfg.periods > 0 ? (amount * effectiveRate) / cfg.periods : 0;
-    
-    // Calculate compound interest: A = P(1 + r)^t
-    const compoundAmount = amount * Math.pow(1 + effectiveRate, years);
-    const totalEarnings = compoundAmount - amount;
-    
-    const earlyExitPenalty = months < 36 ? amount * 0.05 : 0;
-    const adjustedPrincipalAmount = amount - earlyExitPenalty;
-    
-    return {
-      payoutPerPeriod: payout,
-      annualReturn: amount * effectiveRate,
-      totalReturn: totalEarnings,
-      adjustedPrincipal: adjustedPrincipalAmount,
-      frequency: cfg.frequency,
-      ratePct: `${(effectiveRate * 100).toFixed(2)}% p.a.`,
-      durationInMonths: months,
-      hasEarlyExitAdjustment: months < 36,
-    };
-  }, [amount, series, timePeriod, duration]);
+  const durationInMonths = timePeriod === "years" ? duration * 12 : duration;
+  const hasEarlyExitAdjustment = durationInMonths < 36;
 
   // Series comparison data
   const comparisonData = useMemo(() => {
@@ -125,7 +86,7 @@ const ReturnCalculator = () => {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-4">
               <Label htmlFor="investment-amount">Amount (USD)</Label>
               <div className="space-y-3">
@@ -151,20 +112,6 @@ const ReturnCalculator = () => {
             </div>
 
             <div className="space-y-2">
-              <Label>Series</Label>
-              <Select value={series} onValueChange={(v) => setSeries(v as SeriesKey)}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select series" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="s1">Series 1 — Quarterly</SelectItem>
-                  <SelectItem value="s2">Series 2 — Annual</SelectItem>
-                  <SelectItem value="s3">Series 3 — At Maturity</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-2">
               <Label>Investment Period</Label>
               <div className="flex gap-2">
                 <Input
@@ -186,34 +133,6 @@ const ReturnCalculator = () => {
                 </Select>
               </div>
             </div>
-
-            <div className="grid grid-cols-3 gap-3 md:gap-2 content-start mt-4 md:mt-0">
-              <div className="flex items-center gap-2 rounded-lg border border-border px-2 py-2">
-                <Percent className="w-4 h-4 text-primary" />
-                <div className="text-sm">
-                  <div className="text-muted-foreground text-xs">Target ROI</div>
-                  <div className="font-medium text-xs">{ratePct}</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 rounded-lg border border-border px-2 py-2">
-                <CalendarDays className="w-4 h-4 text-primary" />
-                <div className="text-sm">
-                  <div className="text-muted-foreground text-xs">Frequency</div>
-                  <div className="font-medium text-xs">{frequency}</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 rounded-lg border border-border px-2 py-2">
-                <DollarSign className="w-4 h-4 text-primary" />
-                <div className="text-sm">
-                  <div className="text-muted-foreground text-xs">
-                    {series === 's3' ? 'At Maturity' : 'Per Payout'}
-                  </div>
-                  <div className="font-medium text-xs">
-                    {series === 's3' ? 'No Interim Payout' : formatter.format(payoutPerPeriod)}
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {hasEarlyExitAdjustment && (
@@ -225,42 +144,15 @@ const ReturnCalculator = () => {
                   <div>Withdrawals within 36 months carry a 5% adjustment to safeguard fund stability.</div>
                 </div>
               </div>
-              {series === 's3' && (
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-blue-50 border border-blue-200">
-                  <Percent className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <div className="text-sm text-blue-800">
-                    <div className="font-medium">ROI Adjustment for Series 3</div>
-                    <div>Returns reduced to 12% p.a. for withdrawals within 36 months.</div>
-                  </div>
+              <div className="flex items-center gap-3 p-4 rounded-lg bg-blue-50 border border-blue-200">
+                <Percent className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                <div className="text-sm text-blue-800">
+                  <div className="font-medium">ROI Adjustment for Series 3</div>
+                  <div>Returns reduced to 12% p.a. for withdrawals within 36 months.</div>
                 </div>
-              )}
+              </div>
             </div>
           )}
-
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-            <div className="text-center rounded-lg bg-card p-4 border border-border">
-              <div className="text-xs text-muted-foreground">Estimated Annual Return</div>
-              <div className="text-2xl font-semibold text-primary">{formatter.format(annualReturn)}</div>
-            </div>
-            <div className="text-center rounded-lg bg-card p-4 border border-border">
-              <div className="text-xs text-muted-foreground">
-                Estimated Total Return ({durationInMonths} mo)
-              </div>
-              <div className="text-2xl font-semibold text-primary">{formatter.format(totalReturn)}</div>
-            </div>
-            {hasEarlyExitAdjustment && (
-              <div className="text-center rounded-lg bg-orange-50 p-4 border border-orange-200">
-                <div className="text-xs text-orange-800">
-                  Principal After 5% Early Exit Adjustment
-                </div>
-                <div className="text-2xl font-semibold text-orange-700">{formatter.format(adjustedPrincipal)}</div>
-              </div>
-            )}
-            <div className="text-center rounded-lg bg-card p-4 border border-border">
-              <div className="text-xs text-muted-foreground">Principal</div>
-              <div className="text-2xl font-semibold text-primary">{formatter.format(amount)}</div>
-            </div>
-          </div>
 
           {/* Series Comparison */}
           <div className="mt-8">
@@ -270,20 +162,11 @@ const ReturnCalculator = () => {
                 {comparisonData.map((seriesData) => (
                   <Card 
                     key={seriesData.key} 
-                    className={`border transition-all ${
-                      seriesData.key === series 
-                        ? 'border-primary bg-primary/5 shadow-lg' 
-                        : 'border-border bg-card hover:shadow-md'
-                    }`}
+                    className="border border-border bg-card hover:shadow-md transition-all"
                   >
                     <CardHeader className="pb-3">
-                      <CardTitle className="text-base flex items-center justify-between">
+                      <CardTitle className="text-base">
                         {seriesData.name}
-                        {seriesData.key === series && (
-                          <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full">
-                            Selected
-                          </span>
-                        )}
                       </CardTitle>
                       <div className="text-sm text-muted-foreground">
                         {seriesData.frequency} • {seriesData.rate} p.a.
