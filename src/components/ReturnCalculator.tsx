@@ -88,6 +88,34 @@ const ReturnCalculator = () => {
     };
   }, [amount, series, timePeriod, duration]);
 
+  // Series comparison data
+  const comparisonData = useMemo(() => {
+    const months = timePeriod === "years" ? duration * 12 : duration;
+    const years = months / 12;
+    const earlyExitPenalty = months < 36 ? amount * 0.05 : 0;
+    
+    return Object.entries(seriesMap).map(([key, cfg]) => {
+      let effectiveRate = cfg.rate;
+      if (key === 's3' && months < 36 && 'earlyRate' in cfg) {
+        effectiveRate = cfg.earlyRate;
+      }
+      
+      const compoundAmount = amount * Math.pow(1 + effectiveRate, years);
+      const totalReturn = compoundAmount - amount;
+      const payout = cfg.periods > 0 ? (amount * effectiveRate) / cfg.periods : 0;
+      
+      return {
+        key,
+        name: cfg.name,
+        frequency: cfg.frequency,
+        rate: `${(effectiveRate * 100).toFixed(2)}%`,
+        totalReturn,
+        payoutPerPeriod: payout,
+        adjustedPrincipal: amount - earlyExitPenalty,
+      };
+    });
+  }, [amount, timePeriod, duration]);
+
   return (
     <section aria-labelledby="return-calculator-heading" className="mt-8">
       <Card className="border-0 bg-white/60 backdrop-blur-sm shadow-elegant">
@@ -220,6 +248,66 @@ const ReturnCalculator = () => {
             <div className="text-center rounded-lg bg-card p-4 border border-border">
               <div className="text-xs text-muted-foreground">Principal</div>
               <div className="text-2xl font-semibold text-primary">{formatter.format(amount)}</div>
+            </div>
+          </div>
+
+          {/* Series Comparison */}
+          <div className="mt-8">
+            <h3 className="text-lg font-semibold text-primary mb-4">Series Comparison</h3>
+            <div className="overflow-x-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 min-w-full">
+                {comparisonData.map((seriesData) => (
+                  <Card 
+                    key={seriesData.key} 
+                    className={`border transition-all ${
+                      seriesData.key === series 
+                        ? 'border-primary bg-primary/5 shadow-lg' 
+                        : 'border-border bg-card hover:shadow-md'
+                    }`}
+                  >
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-base flex items-center justify-between">
+                        {seriesData.name}
+                        {seriesData.key === series && (
+                          <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full">
+                            Selected
+                          </span>
+                        )}
+                      </CardTitle>
+                      <div className="text-sm text-muted-foreground">
+                        {seriesData.frequency} • {seriesData.rate} p.a.
+                      </div>
+                    </CardHeader>
+                    <CardContent className="space-y-3">
+                      <div className="text-center">
+                        <div className="text-xs text-muted-foreground">Total Return ({durationInMonths} mo)</div>
+                        <div className="text-lg font-semibold text-primary">
+                          {formatter.format(seriesData.totalReturn)}
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-xs text-muted-foreground">
+                          {seriesData.key === 's3' ? 'At Maturity' : 'Per Payout'}
+                        </div>
+                        <div className="text-sm font-medium">
+                          {seriesData.key === 's3' 
+                            ? 'No Interim Payout' 
+                            : formatter.format(seriesData.payoutPerPeriod)
+                          }
+                        </div>
+                      </div>
+                      {hasEarlyExitAdjustment && (
+                        <div className="text-center">
+                          <div className="text-xs text-orange-800">After Early Exit Adjustment</div>
+                          <div className="text-sm font-medium text-orange-700">
+                            {formatter.format(seriesData.adjustedPrincipal)}
+                          </div>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </CardContent>
