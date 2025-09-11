@@ -177,33 +177,37 @@ const ReturnCalculator = () => {
                     </CardHeader>
                     <CardContent className="space-y-3 pt-0">
                       <div className="bg-primary/5 rounded-lg p-3 text-center relative">
-                        <div className="absolute top-2 right-2 flex items-center gap-1">
+                        <div className="absolute top-2 right-2">
                           {seriesData.key === 's1' && (
-                            <>
+                            <div className="flex flex-col items-end gap-1">
                               <TrendingUp className="w-4 h-4 text-blue-600" />
                               <span className="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">
                                 Steady
                               </span>
-                            </>
+                            </div>
                           )}
                           {seriesData.key === 's2' && (
-                            <>
-                              <TrendingUp className="w-4 h-4 text-green-600" />
-                              <Star className="w-3 h-3 text-green-500" />
+                            <div className="flex flex-col items-end gap-1">
+                              <div className="flex items-center gap-1">
+                                <TrendingUp className="w-4 h-4 text-green-600" />
+                                <Star className="w-3 h-3 text-green-500" />
+                              </div>
                               <span className="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
                                 Better
                               </span>
-                            </>
+                            </div>
                           )}
                           {seriesData.key === 's3' && (
-                            <>
-                              <TrendingUp className="w-4 h-4 text-amber-600" />
-                              <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
-                              <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
+                            <div className="flex flex-col items-end gap-1">
+                              <div className="flex items-center gap-1">
+                                <TrendingUp className="w-4 h-4 text-amber-600" />
+                                <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
+                                <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
+                              </div>
                               <span className="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800">
                                 Premium
                               </span>
-                            </>
+                            </div>
                           )}
                         </div>
                         <div className="text-xs font-medium text-muted-foreground mb-1">
