@@ -297,6 +297,12 @@ const ReturnCalculator = () => {
                         </div>
                       </div>
                       <div className="text-center">
+                        <div className="text-xs text-muted-foreground">Principal Payout</div>
+                        <div className="text-sm font-medium">
+                          {formatter.format(amount)}
+                        </div>
+                      </div>
+                      <div className="text-center">
                         <div className="text-xs text-muted-foreground">
                           {seriesData.key === 's3' ? 'At Maturity' : 'Per Payout'}
                         </div>
