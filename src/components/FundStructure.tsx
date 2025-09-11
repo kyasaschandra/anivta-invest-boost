@@ -24,21 +24,21 @@ const FundStructure = () => {
     },
     {
       name: "Series 2",
-      subtitle: "Semi-Annual Income",
-      roi: "Target ROI: 11.50% p.a.",
-      payout: "Payouts: Every 6 months",
-      tenor: "Minimum 36 months investment period.",
-      description:
-        "Balances higher yield with moderate payout frequency for those preferring fewer disbursements.",
-    },
-    {
-      name: "Series 3",
       subtitle: "Annual Income",
       roi: "Target ROI: 12% p.a.",
       payout: "Payouts: Once per year",
       tenor: "Minimum 36 months investment period.",
       description:
         "Designed for investors comfortable with annual disbursements, maximizing yield over the investment term.",
+    },
+    {
+      name: "Series 3",
+      subtitle: "Capital Growth",
+      roi: "Target ROI: 15% p.a. (12% if withdrawn within 36 months)",
+      payout: "Payouts: At maturity only",
+      tenor: "Minimum 36 months investment period.",
+      description:
+        "Maximizes compound growth with no interim payouts, ideal for investors focused on capital appreciation with the highest target returns.",
     },
   ];
 
