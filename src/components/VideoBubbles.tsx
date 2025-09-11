@@ -21,21 +21,21 @@ const videos: Video[] = [
   },
   {
     id: "eXRppdEf5pc", 
-    title: "Project Showcase",
+    title: "Anvita Ivana",
     thumbnail: "https://img.youtube.com/vi/eXRppdEf5pc/maxresdefault.jpg",
     embedUrl: "https://www.youtube.com/embed/eXRppdEf5pc?enablejsapi=1",
     description: "Explore our latest development projects"
   },
   {
     id: "DDx16jiwZI0",
-    title: "Development Showcase", 
+    title: "High9 by Anvita", 
     thumbnail: "https://img.youtube.com/vi/DDx16jiwZI0/maxresdefault.jpg",
     embedUrl: "https://www.youtube.com/embed/DDx16jiwZI0?enablejsapi=1",
     description: "See our construction and development process"
   },
   {
     id: "nFoCEj9fPXo",
-    title: "Portfolio Showcase",
+    title: "by Anvita",
     thumbnail: "https://img.youtube.com/vi/nFoCEj9fPXo/maxresdefault.jpg", 
     embedUrl: "https://www.youtube.com/embed/nFoCEj9fPXo?enablejsapi=1",
     description: "Browse through our complete portfolio"
