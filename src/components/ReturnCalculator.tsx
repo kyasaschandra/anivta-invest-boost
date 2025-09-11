@@ -159,47 +159,56 @@ const ReturnCalculator = () => {
             <h3 className="text-lg font-semibold text-primary mb-4">Series Comparison</h3>
             <div className="overflow-x-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 min-w-full">
-                {comparisonData.map((seriesData) => (
+                {comparisonData.map((seriesData, index) => (
                   <Card 
                     key={seriesData.key} 
-                    className="border border-border bg-card hover:shadow-md transition-all"
+                    className="border border-border bg-gradient-to-br from-white to-gray-50/50 hover:shadow-lg transition-all duration-300"
                   >
-                    <CardHeader className="pb-3">
-                      <CardTitle className="text-base">
-                        {seriesData.name}
-                      </CardTitle>
-                      <div className="text-sm text-muted-foreground">
-                        {seriesData.frequency} • {seriesData.rate} p.a.
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-lg font-bold text-primary">
+                          {seriesData.name}
+                        </CardTitle>
+                        <div className="w-3 h-3 rounded-full bg-gradient-primary"></div>
+                      </div>
+                      <div className="text-sm font-medium text-muted-foreground">
+                        {seriesData.frequency} • <span className="text-primary font-semibold">{seriesData.rate} p.a.</span>
                       </div>
                     </CardHeader>
-                    <CardContent className="space-y-3">
-                      <div className="text-center">
-                        <div className="text-xs text-muted-foreground">Total Return ({durationInMonths} mo)</div>
-                        <div className="text-lg font-semibold text-primary">
+                    <CardContent className="space-y-3 pt-0">
+                      <div className="bg-primary/5 rounded-lg p-3 text-center">
+                        <div className="text-xs font-medium text-muted-foreground mb-1">
+                          Total Return ({durationInMonths} mo)
+                        </div>
+                        <div className="text-xl font-bold text-primary">
                           {formatter.format(seriesData.totalReturn)}
                         </div>
                       </div>
-                      <div className="text-center">
-                        <div className="text-xs text-muted-foreground">Principal Payout</div>
-                        <div className="text-sm font-medium">
-                          {formatter.format(amount)}
+                      
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="text-center p-2 bg-card rounded border">
+                          <div className="text-xs text-muted-foreground mb-1">Principal Payout</div>
+                          <div className="text-sm font-semibold text-foreground">
+                            {formatter.format(amount)}
+                          </div>
+                        </div>
+                        <div className="text-center p-2 bg-card rounded border">
+                          <div className="text-xs text-muted-foreground mb-1">
+                            {seriesData.key === 's3' ? 'At Maturity' : 'Per Payout'}
+                          </div>
+                          <div className="text-sm font-semibold text-foreground">
+                            {seriesData.key === 's3' 
+                              ? 'No Interim Payout' 
+                              : formatter.format(seriesData.payoutPerPeriod)
+                            }
+                          </div>
                         </div>
                       </div>
-                      <div className="text-center">
-                        <div className="text-xs text-muted-foreground">
-                          {seriesData.key === 's3' ? 'At Maturity' : 'Per Payout'}
-                        </div>
-                        <div className="text-sm font-medium">
-                          {seriesData.key === 's3' 
-                            ? 'No Interim Payout' 
-                            : formatter.format(seriesData.payoutPerPeriod)
-                          }
-                        </div>
-                      </div>
+                      
                       {hasEarlyExitAdjustment && (
-                        <div className="text-center">
-                          <div className="text-xs text-orange-800">After Early Exit Adjustment</div>
-                          <div className="text-sm font-medium text-orange-700">
+                        <div className="bg-orange-50 border border-orange-200 rounded-lg p-2 text-center">
+                          <div className="text-xs text-orange-700 mb-1">After Early Exit Adjustment</div>
+                          <div className="text-sm font-semibold text-orange-800">
                             {formatter.format(seriesData.adjustedPrincipal)}
                           </div>
                         </div>
