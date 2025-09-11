@@ -1,31 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Shield, ShieldCheck, Lock, Building2 } from "lucide-react";
-import { useRef, useCallback } from "react";
+import VideoBubbles from "./VideoBubbles";
 
 const About = () => {
-  const newVideoRef = useRef<HTMLIFrameElement>(null);
-  const video1Ref = useRef<HTMLIFrameElement>(null);
-  const video2Ref = useRef<HTMLIFrameElement>(null);
-  const video3Ref = useRef<HTMLIFrameElement>(null);
-
-  const pauseAllVideos = useCallback(() => {
-    // Pause YouTube videos by sending postMessage
-    if (newVideoRef.current) {
-      newVideoRef.current.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-    }
-    if (video1Ref.current) {
-      video1Ref.current.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-    }
-    if (video2Ref.current) {
-      video2Ref.current.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-    }
-    if (video3Ref.current) {
-      video3Ref.current.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-    }
-  }, []);
-
   const features = [
     {
       icon: Shield,
@@ -77,81 +54,8 @@ const About = () => {
           ))}
         </div>
 
-        {/* Portfolio Showcase */}
-        <div className="mb-12 md:mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-              Proven Development Excellence
-            </h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Our fund is backed by Anvita Group's two decades of delivering premium residential and commercial developments across global markets.
-            </p>
-          </div>
-          <Carousel className="w-full max-w-5xl mx-auto" setApi={(api) => {
-            api?.on("select", () => pauseAllVideos());
-          }}>
-            <CarouselContent>
-              <CarouselItem>
-                <div className="relative rounded-2xl overflow-hidden shadow-card">
-                  <AspectRatio ratio={16 / 9}>
-                    <iframe
-                      ref={newVideoRef}
-                      src="https://www.youtube.com/embed/lZnAcCtuGE4?enablejsapi=1"
-                      title="Anvita Group Featured Video"
-                      className="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </AspectRatio>
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="relative rounded-2xl overflow-hidden shadow-card">
-                  <AspectRatio ratio={16 / 9}>
-                    <iframe
-                      ref={video1Ref}
-                      src="https://www.youtube.com/embed/eXRppdEf5pc?enablejsapi=1"
-                      title="Anvita Group Project Showcase"
-                      className="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </AspectRatio>
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="relative rounded-2xl overflow-hidden shadow-card">
-                  <AspectRatio ratio={16 / 9}>
-                    <iframe
-                      ref={video2Ref}
-                      src="https://www.youtube.com/embed/DDx16jiwZI0?enablejsapi=1"
-                      title="Anvita Group Development Showcase"
-                      className="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </AspectRatio>
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="relative rounded-2xl overflow-hidden shadow-card">
-                  <AspectRatio ratio={16 / 9}>
-                    <iframe
-                      ref={video3Ref}
-                      src="https://www.youtube.com/embed/nFoCEj9fPXo?enablejsapi=1"
-                      title="Anvita Group Portfolio Showcase"
-                      className="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </AspectRatio>
-                </div>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
+        {/* Portfolio Showcase - Video Bubbles */}
+        <VideoBubbles />
 
         {/* Stats Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
