@@ -58,7 +58,7 @@ const VideoBubbles = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-primary mb-4">
-            Video Gallery
+            Featured Projects
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Explore our projects and company showcase through these engaging videos
@@ -85,7 +85,6 @@ const VideoBubbles = () => {
                   transition-all duration-500 ease-out
                   group-hover:scale-105 group-hover:-translate-y-2
                   w-48 h-48 mx-auto
-                  ${index % 2 === 0 ? 'animate-pulse' : ''}
                 `}>
                   {/* Video Thumbnail */}
                   <div className="absolute inset-4 rounded-full overflow-hidden">
@@ -118,8 +117,8 @@ const VideoBubbles = () => {
                   </div>
 
                   {/* Floating effect dots */}
-                  <div className="absolute -top-2 -right-2 w-3 h-3 bg-primary rounded-full animate-ping opacity-20"></div>
-                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                  <div className="absolute -top-2 -right-2 w-3 h-3 bg-primary rounded-full opacity-20"></div>
+                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-accent rounded-full"></div>
                 </div>
 
                 {/* Title */}
