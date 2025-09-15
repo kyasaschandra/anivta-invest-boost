@@ -61,8 +61,15 @@ const ReturnCalculator = () => {
         effectiveRate = cfg.earlyRate;
       }
       
-      // Simple interest calculation for all series
-      const totalReturn = amount * effectiveRate * years;
+      let totalReturn;
+      if (key === 's3' && months >= 12) {
+        // Compound interest annually for Series 3 when held 12+ months
+        const compoundAmount = amount * Math.pow(1 + effectiveRate, years);
+        totalReturn = compoundAmount - amount;
+      } else {
+        // Simple interest for Series 1, 2, and Series 3 when held < 12 months
+        totalReturn = amount * effectiveRate * years;
+      }
       
       const payout = cfg.periods > 0 ? (amount * effectiveRate) / cfg.periods : 0;
       
