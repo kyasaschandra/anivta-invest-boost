@@ -248,7 +248,7 @@ const ReturnCalculator = () => {
                       
                       {hasEarlyExitAdjustment && (
                         <div className="bg-orange-50 border border-orange-200 rounded-lg p-2 text-center">
-                          <div className="text-xs text-orange-700 mb-1">After Early Exit Adjustment</div>
+                          <div className="text-xs text-orange-700 mb-1">Early Exit Adjustment</div>
                           <div className="text-sm font-semibold text-orange-800">
                             {formatter.format(amount * 0.05)}
                           </div>
