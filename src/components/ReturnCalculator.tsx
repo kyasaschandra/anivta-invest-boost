@@ -63,9 +63,12 @@ const ReturnCalculator = () => {
       
       let totalReturn;
       if (key === 's3' && months >= 12) {
-        // Compound interest annually for Series 3 when held 12+ months
-        const compoundAmount = amount * Math.pow(1 + effectiveRate, years);
-        totalReturn = compoundAmount - amount;
+        // Compound annually for full years, then simple interest for leftover months
+        const fullYears = Math.floor(months / 12);
+        const remainingMonths = months % 12;
+        const compoundedPrincipal = amount * Math.pow(1 + effectiveRate, fullYears);
+        const remainderInterest = compoundedPrincipal * effectiveRate * (remainingMonths / 12);
+        totalReturn = (compoundedPrincipal + remainderInterest) - amount;
       } else {
         // Simple interest for Series 1, 2, and Series 3 when held < 12 months
         totalReturn = amount * effectiveRate * years;
